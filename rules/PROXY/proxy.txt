@@ -1,0 +1,4 @@
+payload:
+  - '+.launchpad.net'
+  - '+.git.io'
+  - '+.golang.org'

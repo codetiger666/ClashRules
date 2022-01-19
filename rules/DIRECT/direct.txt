@@ -1,0 +1,3 @@
+payload:
+  - '+.ipv6-test.com'
+  - '+.yrjw.tk'
