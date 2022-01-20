@@ -1,4 +1,19 @@
 payload:
-  - '+.launchpad.net'
-  - '+.git.io'
-  - '+.golang.org'
+  # > Linux
+  # >> Ubuntu
+  - DOMAIN-SUFFIX,launchpad.net
+
+  # > git相关服务
+  - DOMAIN-SUFFIX,git.io
+
+  # > 编程服务相关
+  - DOMAIN-SUFFIX,golang.org
+  - DOMAIN-SUFFIX,visualstudio.com
+  
+  # > Onedrive相关服务
+  - DOMAIN-SUFFIX,storage.live.com  
+  - DOMAIN-SUFFIX,pipe.aria.microsoft.com
+  - DOMAIN-SUFFIX,onedrive.com
+  - DOMAIN-SUFFIX,blob.core.windows.net
+  - DOMAIN-SUFFIX,officecdn.microsoft.com
+  - DOMAIN-SUFFIX,officecdn.microsoft.com.edgesuite.net
