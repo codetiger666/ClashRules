@@ -232,11 +232,11 @@ proxy-groups: # 此参数必须保留,不能删除
 - name: 🔰 节点选择
   type: select
   proxies:
-    - ♻️ 自动选择
+    - ⚡ 自动选择
     - 🎯 全球直连
   
 
-- name: ♻️ 自动选择
+- name: ⚡ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
@@ -246,28 +246,28 @@ proxy-groups: # 此参数必须保留,不能删除
   type: select
   proxies:
     - 🔰 节点选择
-    - ♻️ 自动选择
+    - ⚡ 自动选择
     - 🎯 全球直连
 
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
     - 🔰 节点选择
-    - ♻️ 自动选择
+    - ⚡ 自动选择
     - 🎯 全球直连
 
 - name: 📺 YOUTUBE
   type: select
   proxies:
     - 🔰 节点选择
-    - ♻️ 自动选择
+    - ⚡ 自动选择
     - 🎯 全球直连
 
 - name: 📺 NETFLIX
   type: select	
   proxies:
     - 🔰 节点选择
-    - ♻️ 自动选择
+    - ⚡ 自动选择
     - 🎯 全球直连
 
 
@@ -275,7 +275,7 @@ proxy-groups: # 此参数必须保留,不能删除
   type: select
   proxies:
     - 🔰 节点选择
-    - ♻️ 自动选择
+    - ⚡ 自动选择
     - 🎯 全球直连
 
 
@@ -283,7 +283,7 @@ proxy-groups: # 此参数必须保留,不能删除
   type: select
   proxies:
     - 🔰 节点选择
-    - ♻️ 自动选择
+    - ⚡ 自动选择
     - 🎯 全球直连
 
 
@@ -301,7 +301,7 @@ proxy-groups: # 此参数必须保留,不能删除
   type: select
   proxies:
     - 🔰 节点选择
-    - ♻️ 自动选择
+    - ⚡ 自动选择
     - 🎯 全球直连
 
 
@@ -310,7 +310,7 @@ proxy-groups: # 此参数必须保留,不能删除
   type: select
   proxies:
     - 🔰 节点选择
-    - ♻️ 自动选择
+    - ⚡ 自动选择
     - 🎯 全球直连
 
 
@@ -318,7 +318,7 @@ proxy-groups: # 此参数必须保留,不能删除
   type: select
   proxies:
     - 🔰 节点选择
-    - ♻️ 自动选择
+    - ⚡ 自动选择
     - 🎯 全球直连
 
 
@@ -326,14 +326,14 @@ proxy-groups: # 此参数必须保留,不能删除
   type: select
   proxies:
     - 🔰 节点选择
-    - ♻️ 自动选择
+    - ⚡ 自动选择
     - 🎯 全球直连
 
 - name: 🐟 漏网之鱼
   type: select
   proxies:
     - 🔰 节点选择
-    - ♻️ 自动选择
+    - ⚡ 自动选择
     - 🎯 全球直连
 # - name: "NOTCN"
 #   type: url-test
