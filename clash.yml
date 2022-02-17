@@ -234,6 +234,7 @@ proxy-groups: # 此参数必须保留,不能删除
   proxies:
     - ♻️ 自动选择
     - 🎯 全球直连
+    - 节点选择
   
 
 - name: ♻️ 自动选择
@@ -241,6 +242,7 @@ proxy-groups: # 此参数必须保留,不能删除
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
+    - 节点选择
 
 - name: 🌍 国外媒体
   type: select
