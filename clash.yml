@@ -229,11 +229,11 @@ proxy-groups: # 此参数必须保留,不能删除
 #   proxies:
 #     - Proxy
 #     - DIRECT
-- name: 🔰 节点选择
+- name: 节点选择
   type: select
   proxies:
     - 自动选择
-    - 🎯 全球直连
+    - 全球直连
   
 
 - name: 自动选择
@@ -241,101 +241,99 @@ proxy-groups: # 此参数必须保留,不能删除
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-    - 🎯 全球直连
+    - 全球直连
   
-- name: 🌍 国外媒体
+- name: 国外媒体
   type: select
   proxies:
-    - 🔰 节点选择
+    - 节点选择
     - 自动选择
-    - 🎯 全球直连
+    - 全球直连
 
-- name: Ⓜ️ 微软服务
+- name: 微软服务
   type: select
   proxies:
-    - 🔰 节点选择
+    - 节点选择
     - 自动选择
-    - 🎯 全球直连
+    - 全球直连
 
-- name: 📺 YOUTUBE
+- name: YOUTUBE
   type: select
   proxies:
-    - 🔰 节点选择
+    - 节点选择
     - 自动选择
-    - 🎯 全球直连
+    - 全球直连
 
-- name: 📺 NETFLIX
+- name: NETFLIX
   type: select	
   proxies:
-    - 🔰 节点选择
+    - 节点选择
     - 自动选择
-    - 🎯 全球直连
+    - 全球直连
 
 
-- name: 🍎 苹果服务
+- name: 苹果服务
   type: select
   proxies:
-    - 🔰 节点选择
+    - 节点选择
     - 自动选择
-    - 🎯 全球直连
+    - 全球直连
 
 
-- name: 🍎 ICLOUD
+- name: ICLOUD
   type: select
   proxies:
-    - 🔰 节点选择
+    - 节点选择
     - 自动选择
-    - 🎯 全球直连
+    - 全球直连
 
 
-- name: 🎯 全球直连
+- name: 全球直连
   type: select
   proxies:
     - DIRECT
 
-- name: ⛔ 全球拦截
+- name: 全球拦截
   type: select
   proxies:
     - REJECT
 
-- name: 🌐 GOOGLE
+- name: GOOGLE
   type: select
   proxies:
-    - 🔰 节点选择
+    - 节点选择
     - 自动选择
-    - 🎯 全球直连
+    - 全球直连
 
-
-
-- name: 🅿️ PROXY
+- name: PROXY
   type: select
   proxies:
-    - 🔰 节点选择
+    - 节点选择
     - 自动选择
-    - 🎯 全球直连
+    - 全球直连
 
 
-- name: 🌐 NOTCN
+- name: NOTCN
   type: select
   proxies:
-    - 🔰 节点选择
+    - 节点选择
     - 自动选择
-    - 🎯 全球直连
+    - 全球直连
 
 
-- name: 🌐 SPEEDTEST
+- name: SPEEDTEST
   type: select
   proxies:
-    - 🔰 节点选择
+    - 节点选择
     - 自动选择
-    - 🎯 全球直连
+    - 全球直连
 
-- name: 🐟 漏网之鱼
+- name: 漏网之鱼
   type: select
   proxies:
-    - 🔰 节点选择
+    - 节点选择
     - 自动选择
-    - 🎯 全球直连
+    - 全球直连
 # - name: "NOTCN"
 #   type: url-test
 #   proxies:
@@ -517,25 +515,25 @@ rule-providers:
     interval: 86400
 
 rules:
-  - RULE-SET,applications,🎯 全球直连
-  - RULE-SET,nn-direct,🎯 全球直连
-  - RULE-SET,nn-proxy,🅿️ PROXY
-  - RULE-SET,reject,⛔ 全球拦截
-  - RULE-SET,lancidr,🎯 全球直连,no-resolve
-  - RULE-SET,cncidr,🎯 全球直连,no-resolve
-  - RULE-SET,direct,🎯 全球直连
-  - RULE-SET,icloud,🍎 ICLOUD
-  - RULE-SET,apple,🍎 苹果服务
-  # - RULE-SET,fcm,🎯 全球直连
-  # - RULE-SET,micrsoft,Ⓜ️ 微软服务
-  - RULE-SET,google,🌐 GOOGLE
-  # - RULE-SET,youtube,📺 YOUTUBE
-  # - RULE-SET,netflix,📺 NETFLIX
-  - RULE-SET,gfw,🅿️ PROXY
-  # - RULE-SET,speedtest,🌐 SPEEDTEST
-  - RULE-SET,greatfire,🅿️ PROXY
-  - RULE-SET,tld-not-cn,🌐 NOTCN
-  - RULE-SET,telegramcidr,🅿️ PROXY,no-resolve
-  - RULE-SET,proxy,🅿️ PROXY
-  - GEOIP,CN,🎯 全球直连
-  - MATCH,🐟 漏网之鱼
+  - RULE-SET,applications,全球直连
+  - RULE-SET,nn-direct,全球直连
+  - RULE-SET,nn-proxy,PROXY
+  - RULE-SET,reject,全球拦截
+  - RULE-SET,lancidr,全球直连,no-resolve
+  - RULE-SET,cncidr,全球直连,no-resolve
+  - RULE-SET,direct,全球直连
+  - RULE-SET,icloud,ICLOUD
+  - RULE-SET,apple,苹果服务
+  # - RULE-SET,fcm,全球直连
+  # - RULE-SET,micrsoft,微软服务
+  - RULE-SET,google,GOOGLE
+  # - RULE-SET,youtube,YOUTUBE
+  # - RULE-SET,netflix,NETFLIX
+  - RULE-SET,gfw,PROXY
+  # - RULE-SET,speedtest,SPEEDTEST
+  - RULE-SET,greatfire,PROXY
+  - RULE-SET,tld-not-cn,NOTCN
+  - RULE-SET,telegramcidr,PROXY,no-resolve
+  - RULE-SET,proxy,PROXY
+  - GEOIP,CN,全球直连
+  - MATCH,漏网之鱼
