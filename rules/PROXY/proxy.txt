@@ -17,3 +17,6 @@ payload:
   - DOMAIN-SUFFIX,blob.core.windows.net
   - DOMAIN-SUFFIX,officecdn.microsoft.com
   - DOMAIN-SUFFIX,officecdn.microsoft.com.edgesuite.net
+  
+  # > 机场订阅需代理
+  - DOMAIN-SUFFIX,benv2b.cf
