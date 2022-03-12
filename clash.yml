@@ -481,14 +481,14 @@ rule-providers:
 
   netflixcidr:
     type: http
-    behavior: classical
+    behavior: ipcidr
     url: https://raw.codetiger.gq/codetiger666/clash-pro-rules/release/netflixcidr.txt
     path: "./ruleset/netflixcidr.yaml"
     interval: 86400
 
   netflix:
     type: http
-    behavior: classical
+    behavior: domain
     url: https://raw.codetiger.gq/codetiger666/clash-pro-rules/release/netflix.txt
     path: "./ruleset/netflix.yaml"
     interval: 86400
