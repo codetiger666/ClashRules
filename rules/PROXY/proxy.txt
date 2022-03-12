@@ -21,3 +21,4 @@ payload:
   # > 机场订阅需代理
   - DOMAIN-SUFFIX,benv2b.cf
   - DOMAIN-SUFFIX,netgate.com
+  - DOMAIN-SUFFIX,shoujiyanxishe.tk
