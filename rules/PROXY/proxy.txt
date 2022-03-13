@@ -9,6 +9,7 @@ payload:
   # > 编程服务相关
   - DOMAIN-SUFFIX,golang.org
   - DOMAIN-SUFFIX,visualstudio.com
+  - DOMAIN-SUFFIX,netgate.com
   
   # > Onedrive相关服务
   - DOMAIN-SUFFIX,storage.live.com  
