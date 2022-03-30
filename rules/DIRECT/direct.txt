@@ -1,6 +1,7 @@
 payload:
   # > 获取ip相关
   - DOMAIN-SUFFIX,ipv6-test.com
+  - DOMAIN-SUFFIX,api-ipv4.ip.sb
 
   # > 自有域名服务
   - DOMAIN-SUFFIX,yrjw.tk
