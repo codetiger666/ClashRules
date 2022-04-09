@@ -1,15 +1,15 @@
 # Copyright (c) 2018 Dreamacro
 # 接管：不支持在此页面直接修改，请到全局设置页面进行修改
 
-# Port of HTTP(S) 🌐PROXY server on the local end
+# Port of HTTP(S) PROXY server on the local end
 # 此项将被接管
 port: 7890
 
-# Port of SOCKS5 🌐PROXY server on the local end
+# Port of SOCKS5 PROXY server on the local end
 # 此项将被接管
 socks-port: 7891
 
-# Transparent 🌐PROXY server port for Linux and macOS
+# Transparent PROXY server port for Linux and macOS
 # 此项将被接管
 redir-port: 7892
     
@@ -147,10 +147,10 @@ dns:
 # 以上设置您可直接覆盖到配置文件,无需更改
 # Openclash 不会对下方服务器设置进行任何更改，请确保设置正确
 
-#🌐PROXY-providers: # 代理集设置，此部分与🌐PROXY两者不能同时删除
+#PROXY-providers: # 代理集设置，此部分与PROXY两者不能同时删除
 #  pro:
 #    type: http
-#    path: ./🌐PROXY_provider/pro.yaml
+#    path: ./PROXY_provider/pro.yaml
 #    url: https://xxx
 #    interval: 3600
 #    health-check:
@@ -159,19 +159,19 @@ dns:
 #      interval: 300
 #  iplc:
 #    type: file
-#    path: ./🌐PROXY_provider/iplc.yaml
+#    path: ./PROXY_provider/iplc.yaml
 #    health-check:
 #      enable: true
 #      url: http://www.gstatic.com/generate_204
 #      interval: 300
       
-proxies: # 节点设置，此部分与🌐PROXY-provider两者不能同时删除
+proxies: # 节点设置，此部分与PROXY-provider两者不能同时删除
   
 # Openclash 不会对下方策略组设置进行任何更改，请确保设置正确
 
-🌐PROXY-groups: # 此参数必须保留,不能删除
+PROXY-groups: # 此参数必须保留,不能删除
 
-# relay chains the proxies. proxies shall not contain a 🌐PROXY-group. No UDP support.
+# relay chains the proxies. proxies shall not contain a PROXY-group. No UDP support.
 # Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
 # - name: "relay"
 #   type: relay
@@ -181,7 +181,7 @@ proxies: # 节点设置，此部分与🌐PROXY-provider两者不能同时删除
 #     - ss1
 #     - ss2
 
-# # url-test select which 🌐PROXY will be used by benchmarking speed to a URL.
+# # url-test select which PROXY will be used by benchmarking speed to a URL.
 # - name: "auto"
 #   type: url-test
 #   proxies:
@@ -201,7 +201,7 @@ proxies: # 节点设置，此部分与🌐PROXY-provider两者不能同时删除
 #   url: 'http://www.gstatic.com/generate_204'
 #   interval: 300
 
-# # load-balance: The request of the same eTLD will be dial on the same 🌐PROXY.
+# # load-balance: The request of the same eTLD will be dial on the same PROXY.
 # - name: "load-balance"
 #   type: load-balance
 #   strategy: consistent-hashing # or round-robin
@@ -212,9 +212,9 @@ proxies: # 节点设置，此部分与🌐PROXY-provider两者不能同时删除
 #   url: 'http://www.gstatic.com/generate_204'
 #   interval: 300
 
-# # select is used for selecting 🌐PROXY or 🌐PROXY group
-# # you can use RESTful API to switch 🌐PROXY, is recommended for use in GUI.
-# - name: 🌐PROXY
+# # select is used for selecting PROXY or PROXY group
+# # you can use RESTful API to switch PROXY, is recommended for use in GUI.
+# - name: PROXY
 #   type: select
 #   proxies:
 #     - ss1
@@ -227,7 +227,7 @@ proxies: # 节点设置，此部分与🌐PROXY-provider两者不能同时删除
 #   use:
 #     - provider1
 #   proxies:
-#     - 🌐PROXY
+#     - PROXY
 #     - DIRECT
 - name: 🔰节点选择
   type: select
