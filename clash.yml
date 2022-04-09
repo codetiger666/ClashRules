@@ -169,7 +169,7 @@ proxies: # 节点设置，此部分与PROXY-provider两者不能同时删除
   
 # Openclash 不会对下方策略组设置进行任何更改，请确保设置正确
 
-PROXY-groups: # 此参数必须保留,不能删除
+proxy-groups: # 此参数必须保留,不能删除
 
 # relay chains the proxies. proxies shall not contain a PROXY-group. No UDP support.
 # Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
