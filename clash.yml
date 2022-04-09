@@ -1,15 +1,15 @@
 # Copyright (c) 2018 Dreamacro
 # 接管：不支持在此页面直接修改，请到全局设置页面进行修改
 
-# Port of HTTP(S) proxy server on the local end
+# Port of HTTP(S) 🌐PROXY server on the local end
 # 此项将被接管
 port: 7890
 
-# Port of SOCKS5 proxy server on the local end
+# Port of SOCKS5 🌐PROXY server on the local end
 # 此项将被接管
 socks-port: 7891
 
-# Transparent proxy server port for Linux and macOS
+# Transparent 🌐PROXY server port for Linux and macOS
 # 此项将被接管
 redir-port: 7892
     
@@ -147,10 +147,10 @@ dns:
 # 以上设置您可直接覆盖到配置文件,无需更改
 # Openclash 不会对下方服务器设置进行任何更改，请确保设置正确
 
-#proxy-providers: # 代理集设置，此部分与Proxy两者不能同时删除
+#🌐PROXY-providers: # 代理集设置，此部分与🌐PROXY两者不能同时删除
 #  pro:
 #    type: http
-#    path: ./proxy_provider/pro.yaml
+#    path: ./🌐PROXY_provider/pro.yaml
 #    url: https://xxx
 #    interval: 3600
 #    health-check:
@@ -159,19 +159,19 @@ dns:
 #      interval: 300
 #  iplc:
 #    type: file
-#    path: ./proxy_provider/iplc.yaml
+#    path: ./🌐PROXY_provider/iplc.yaml
 #    health-check:
 #      enable: true
 #      url: http://www.gstatic.com/generate_204
 #      interval: 300
       
-proxies: # 节点设置，此部分与proxy-provider两者不能同时删除
+proxies: # 节点设置，此部分与🌐PROXY-provider两者不能同时删除
   
 # Openclash 不会对下方策略组设置进行任何更改，请确保设置正确
 
-proxy-groups: # 此参数必须保留,不能删除
+🌐PROXY-groups: # 此参数必须保留,不能删除
 
-# relay chains the proxies. proxies shall not contain a proxy-group. No UDP support.
+# relay chains the proxies. proxies shall not contain a 🌐PROXY-group. No UDP support.
 # Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
 # - name: "relay"
 #   type: relay
@@ -181,7 +181,7 @@ proxy-groups: # 此参数必须保留,不能删除
 #     - ss1
 #     - ss2
 
-# # url-test select which proxy will be used by benchmarking speed to a URL.
+# # url-test select which 🌐PROXY will be used by benchmarking speed to a URL.
 # - name: "auto"
 #   type: url-test
 #   proxies:
@@ -201,7 +201,7 @@ proxy-groups: # 此参数必须保留,不能删除
 #   url: 'http://www.gstatic.com/generate_204'
 #   interval: 300
 
-# # load-balance: The request of the same eTLD will be dial on the same proxy.
+# # load-balance: The request of the same eTLD will be dial on the same 🌐PROXY.
 # - name: "load-balance"
 #   type: load-balance
 #   strategy: consistent-hashing # or round-robin
@@ -212,9 +212,9 @@ proxy-groups: # 此参数必须保留,不能删除
 #   url: 'http://www.gstatic.com/generate_204'
 #   interval: 300
 
-# # select is used for selecting proxy or proxy group
-# # you can use RESTful API to switch proxy, is recommended for use in GUI.
-# - name: Proxy
+# # select is used for selecting 🌐PROXY or 🌐PROXY group
+# # you can use RESTful API to switch 🌐PROXY, is recommended for use in GUI.
+# - name: 🌐PROXY
 #   type: select
 #   proxies:
 #     - ss1
@@ -227,128 +227,128 @@ proxy-groups: # 此参数必须保留,不能删除
 #   use:
 #     - provider1
 #   proxies:
-#     - Proxy
+#     - 🌐PROXY
 #     - DIRECT
-- name: 节点选择
+- name: 🔰节点选择
   type: select
   proxies:
-    - 自动选择
-    - 全球直连
+    - ♻️自动选择
+    - 🟢全球直连
   
 
-- name: 自动选择
+- name: ♻️自动选择
   type: url-test
   url: http://www.google.co.jp/generate_204
   interval: 300
   proxies:
-    - 全球直连
+    - 🟢全球直连
 
-- name: 自动选择fallback
+- name: 🔁自动选择fallback
   type: fallback
   proxies:
-    - 全球直连
+    - 🟢全球直连
   url: http://www.google.co.jp/generate_204
   interval: 300
 
-- name: 负载均衡
+- name: ⚖️负载均衡
   type: load-balance
   proxies:
-    - 全球直连
+    - 🟢全球直连
   url: http://www.google.co.jp/generate_204
   interval: 300
 
-- name: 国外媒体
+- name: 📼国外媒体
   type: select
   proxies:
-    - 节点选择
-    - 自动选择
-    - 全球直连
+    - 🔰节点选择
+    - ♻️自动选择
+    - 🟢全球直连
 
-- name: 微软服务
+- name: 🪟微软服务
   type: select
   proxies:
-    - 节点选择
-    - 自动选择
-    - 全球直连
+    - 🔰节点选择
+    - ♻️自动选择
+    - 🟢全球直连
 
-- name: YOUTUBE
+- name: 📻YOUTUBE
   type: select
   proxies:
-    - 节点选择
-    - 自动选择
-    - 全球直连
+    - 🔰节点选择
+    - ♻️自动选择
+    - 🟢全球直连
 
-- name: NETFLIX
+- name: 📺NETFLIX
   type: select	
   proxies:
-    - 节点选择
-    - 自动选择
-    - 全球直连
+    - 🔰节点选择
+    - ♻️自动选择
+    - 🟢全球直连
 
 
-- name: 苹果服务
+- name: 🍎苹果服务
   type: select
   proxies:
-    - 节点选择
-    - 自动选择
-    - 全球直连
+    - 🔰节点选择
+    - ♻️自动选择
+    - 🟢全球直连
 
 
-- name: ICLOUD
+- name: 🍏ICLOUD
   type: select
   proxies:
-    - 节点选择
-    - 自动选择
-    - 全球直连
+    - 🔰节点选择
+    - ♻️自动选择
+    - 🟢全球直连
 
 
-- name: 全球直连
+- name: 🟢全球直连
   type: select
   proxies:
     - DIRECT
 
-- name: 全球拦截
+- name: ⭕全球拦截
   type: select
   proxies:
     - REJECT
 
-- name: GOOGLE
+- name: 🌏GOOGLE
   type: select
   proxies:
-    - 节点选择
-    - 自动选择
-    - 全球直连
+    - 🔰节点选择
+    - ♻️自动选择
+    - 🟢全球直连
 
-- name: PROXY
+- name: 🌐PROXY
   type: select
   proxies:
-    - 节点选择
-    - 自动选择
-    - 全球直连
+    - 🔰节点选择
+    - ♻️自动选择
+    - 🟢全球直连
 
 
-- name: NOTCN
+- name: 🗺️NOTCN
   type: select
   proxies:
-    - 节点选择
-    - 自动选择
-    - 全球直连
+    - 🔰节点选择
+    - ♻️自动选择
+    - 🟢全球直连
 
 
-- name: SPEEDTEST
+- name: 🏎️SPEEDTEST
   type: select
   proxies:
-    - 节点选择
-    - 自动选择
-    - 全球直连
+    - 🔰节点选择
+    - ♻️自动选择
+    - 🟢全球直连
 
-- name: 漏网之鱼
+- name: 🐟漏网之鱼
   type: select
   proxies:
-    - 节点选择
-    - 自动选择fallback
-    - 自动选择
-    - 全球直连
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
 # - name: "NOTCN"
 #   type: url-test
 #   proxies:
@@ -377,7 +377,7 @@ proxy-groups: # 此参数必须保留,不能删除
 #      if code == "LAN" or code == "CN":
 #        return "DIRECT"
 #      
-#      return "Proxy" # default policy for requests which are not matched by any other script
+#      return "PROXY" # default policy for requests which are not matched by any other script
 rule-providers:
 # https://github.com/Loyalsoldier/clash-rules 仓库规则
   reject:
@@ -408,11 +408,11 @@ rule-providers:
     path: ./ruleset/google.yaml
     interval: 86400
 
-  proxy:
+  PROXY:
     type: http
     behavior: domain
-    url: "https://raw.codetiger.gq/Loyalsoldier/clash-rules/release/proxy.txt"
-    path: ./ruleset/proxy.yaml
+    url: "https://raw.codetiger.gq/Loyalsoldier/clash-rules/release/PROXY.txt"
+    path: ./ruleset/PROXY.yaml
     interval: 86400
 
   direct:
@@ -531,34 +531,34 @@ rule-providers:
     path: ./ruleset/nn-direct.yaml
     interval: 86400
     
-  nn-proxy:
+  nn-PROXY:
     type: http
     behavior: classical
-    url: "https://raw.codetiger.gq/codetiger666/ClashRules/main/rules/PROXY/proxy.txt"
-    path: ./ruleset/nn-proxy.yaml
+    url: "https://raw.codetiger.gq/codetiger666/ClashRules/main/rules/PROXY/PROXY.txt"
+    path: ./ruleset/nn-PROXY.yaml
     interval: 86400
 
 rules:
-  - RULE-SET,applications,全球直连
-  - RULE-SET,nn-direct,全球直连
-  - RULE-SET,nn-proxy,PROXY
-  - RULE-SET,reject,全球拦截
-  - RULE-SET,lancidr,全球直连,no-resolve
-  - RULE-SET,cncidr,全球直连,no-resolve
-  - RULE-SET,direct,全球直连
-  - RULE-SET,icloud,ICLOUD
-  - RULE-SET,apple,苹果服务
-  # - RULE-SET,fcm,全球直连
-  - RULE-SET,micrsoft,微软服务
-  - RULE-SET,google,GOOGLE
-  # - RULE-SET,youtube,YOUTUBE
-  - RULE-SET,netflix,NETFLIX
-  - RULE-SET,netflixcidr,NETFLIX
-  - RULE-SET,gfw,PROXY
-  - RULE-SET,speedtest,SPEEDTEST
-  - RULE-SET,greatfire,PROXY
-  - RULE-SET,tld-not-cn,NOTCN
-  - RULE-SET,telegramcidr,PROXY,no-resolve
-  - RULE-SET,proxy,PROXY
-  - GEOIP,CN,全球直连
-  - MATCH,漏网之鱼
+  - RULE-SET,applications,🟢全球直连
+  - RULE-SET,nn-direct,🟢全球直连
+  - RULE-SET,nn-PROXY,🌐PROXY
+  - RULE-SET,reject,⭕全球拦截
+  - RULE-SET,lancidr,🟢全球直连,no-resolve
+  - RULE-SET,cncidr,🟢全球直连,no-resolve
+  - RULE-SET,direct,🟢全球直连
+  - RULE-SET,icloud,🍏ICLOUD
+  - RULE-SET,apple,🍎苹果服务
+  # - RULE-SET,fcm,🟢全球直连
+  - RULE-SET,micrsoft,🪟微软服务
+  - RULE-SET,google,🌏GOOGLE
+  # - RULE-SET,youtube,📻YOUTUBE
+  - RULE-SET,netflix,📺NETFLIX
+  - RULE-SET,netflixcidr,📺NETFLIX
+  - RULE-SET,gfw,🌐PROXY
+  - RULE-SET,speedtest,🏎️SPEEDTEST
+  - RULE-SET,greatfire,🌐PROXY
+  - RULE-SET,tld-not-cn,🗺️NOTCN
+  - RULE-SET,telegramcidr,🌐PROXY,no-resolve
+  - RULE-SET,PROXY,🌐PROXY
+  - GEOIP,CN,🟢全球直连
+  - MATCH,🐟漏网之鱼
