@@ -411,8 +411,8 @@ rule-providers:
   PROXY:
     type: http
     behavior: domain
-    url: "https://raw.codetiger.gq/Loyalsoldier/clash-rules/release/PROXY.txt"
-    path: ./ruleset/PROXY.yaml
+    url: "https://raw.codetiger.gq/Loyalsoldier/clash-rules/release/proxy.txt"
+    path: ./ruleset/proxy.yaml
     interval: 86400
 
   direct:
