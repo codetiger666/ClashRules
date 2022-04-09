@@ -531,17 +531,17 @@ rule-providers:
     path: ./ruleset/nn-direct.yaml
     interval: 86400
     
-  nn-PROXY:
+  nn-proxy:
     type: http
     behavior: classical
-    url: "https://raw.codetiger.gq/codetiger666/ClashRules/main/rules/PROXY/PROXY.txt"
-    path: ./ruleset/nn-PROXY.yaml
+    url: "https://raw.codetiger.gq/codetiger666/ClashRules/main/rules/PROXY/proxy.txt"
+    path: ./ruleset/nn-proxy.yaml
     interval: 86400
 
 rules:
   - RULE-SET,applications,🟢全球直连
   - RULE-SET,nn-direct,🟢全球直连
-  - RULE-SET,nn-PROXY,🌐PROXY
+  - RULE-SET,nn-proxy,🌐PROXY
   - RULE-SET,reject,⭕全球拦截
   - RULE-SET,lancidr,🟢全球直连,no-resolve
   - RULE-SET,cncidr,🟢全球直连,no-resolve
