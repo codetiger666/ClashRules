@@ -7,5 +7,8 @@ payload:
   # > 自有域名服务
   - DOMAIN-SUFFIX,yrjw.tk
   - DOMAIN-SUFFIX,yzjx.tk
-  - DOMAIN-SUFFIX,lingfeiwangluo.com
+  - DOMAIN-SUFFIX,lingfeicloud.com
   - DOMAIN-SUFFIX,gybyt.cn
+
+  # > 需要直连的服务
+  - DOMAIN-SUFFIX,uc.qbox.me
