@@ -23,3 +23,5 @@ payload:
   - DOMAIN-SUFFIX,benv2b.cf
   - DOMAIN-SUFFIX,netgate.com
   - DOMAIN-SUFFIX,shoujiyanxishe.tk
+  # > 其他需代理
+  - DOMAIN-SUFFIX,kejilion.xyz
