@@ -25,3 +25,4 @@ payload:
   - DOMAIN-SUFFIX,shoujiyanxishe.tk
   # > 其他需代理
   - DOMAIN-SUFFIX,kejilion.xyz
+  - DOMAIN-SUFFIX,woiden.id
