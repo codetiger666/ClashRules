@@ -26,4 +26,4 @@ payload:
   # > 其他需代理
   - DOMAIN-SUFFIX,kejilion.xyz
   - DOMAIN-SUFFIX,woiden.id
-  - SRC-IP-CIDR,192.227.178.63/32
+  - IP-CIDR,192.227.178.63/32
