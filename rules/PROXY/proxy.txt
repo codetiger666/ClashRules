@@ -5,7 +5,7 @@ payload:
 
   # > git相关服务
   - DOMAIN-SUFFIX,git.io
-
+  - DOMAIN-SUFFIX,github.io
   # > 编程服务相关
   - DOMAIN-SUFFIX,golang.org
   - DOMAIN-SUFFIX,visualstudio.com
