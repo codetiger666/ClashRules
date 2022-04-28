@@ -13,3 +13,4 @@ payload:
 
   # > 需要直连的服务
   - DOMAIN-SUFFIX,uc.qbox.me
+  - DOMAIN-KEYWORD,jsdelivr
