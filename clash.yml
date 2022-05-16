@@ -239,7 +239,7 @@ proxy-groups: # 此参数必须保留,不能删除
 - name: ♻️自动选择
   type: url-test
   url: http://www.google.co.jp/generate_204
-  interval: 60
+  interval: 150
   proxies:
     - 🟢全球直连
 
@@ -248,14 +248,14 @@ proxy-groups: # 此参数必须保留,不能删除
   proxies:
     - 🟢全球直连
   url: http://www.google.co.jp/generate_204
-  interval: 60
+  interval: 150
 
 - name: ⚖️负载均衡
   type: load-balance
   proxies:
     - 🟢全球直连
   url: http://www.google.co.jp/generate_204
-  interval: 60
+  interval: 150
 
 - name: 📼国外媒体
   type: select
