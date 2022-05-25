@@ -136,7 +136,6 @@ dns:
     - 8.8.8.8
     - 8.8.4.4
     - tls://8.8.8.8:853
-    - "[2001:4860:4860::8888]:53"
     - https://dns.google/dns-query
     - https://dns.cloudflare.com/dns-query
   fallback-filter:
@@ -561,5 +560,5 @@ rules:
   # - RULE-SET,tld-not-cn,🗺️NOTCN
   - RULE-SET,telegramcidr,🌐PROXY,no-resolve
   - RULE-SET,PROXY,🌐PROXY
-  - GEOIP,CN,🟢全球直连
+  - GEOIP,CN,🟢全球直连,no-resolve
   - MATCH,🐟漏网之鱼
