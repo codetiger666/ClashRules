@@ -549,6 +549,10 @@ rules:
   - RULE-SET,lancidr,🟢全球直连,no-resolve
   - RULE-SET,cncidr,🟢全球直连,no-resolve
   - RULE-SET,direct,🟢全球直连
+  - GEOSITE,cn,🟢全球直连
+  - GEOSITE,tld-cn,🟢全球直连
+  - GEOSITE,category-games@cn,🟢全球直连
+  - GEOIP,CN,🟢全球直连,no-resolve
   - RULE-SET,icloud,🍏ICLOUD
   - RULE-SET,apple,🍎苹果服务
   # - RULE-SET,fcm,🟢全球直连
@@ -563,8 +567,4 @@ rules:
   # - RULE-SET,tld-not-cn,🗺️NOTCN
   - RULE-SET,telegramcidr,🌐PROXY,no-resolve
   - RULE-SET,PROXY,🌐PROXY
-  - GEOSITE,cn,🟢全球直连
-  - GEOSITE,tld-cn,🟢全球直连
-  - GEOSITE,category-games@cn,🟢全球直连
-  - GEOIP,CN,🟢全球直连,no-resolve
   - MATCH,🐟漏网之鱼
