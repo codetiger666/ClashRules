@@ -140,12 +140,12 @@ dns:
     - https://dns.cloudflare.com/dns-query
   fallback-filter:
     geoip: false # default
-    geoip-code: CN
-    geosite:
-      - gfw
-      - greatfire
-    ipcidr: # ips in these subnets will be considered polluted
-      - 240.0.0.0/4
+    # geoip-code: CN
+    # geosite:
+    #   - gfw
+    #   - greatfire
+    # ipcidr: # ips in these subnets will be considered polluted
+    #   - 240.0.0.0/4
   
 # 以上设置您可直接覆盖到配置文件,无需更改
 # Openclash 不会对下方服务器设置进行任何更改，请确保设置正确
