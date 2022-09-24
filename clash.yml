@@ -560,5 +560,4 @@ rules:
   # - RULE-SET,tld-not-cn,🗺️NOTCN
   - RULE-SET,telegramcidr,🌐PROXY,no-resolve
   - RULE-SET,PROXY,🌐PROXY
-  - GEOIP,CN,🟢全球直连,no-resolve
   - MATCH,🐟漏网之鱼
