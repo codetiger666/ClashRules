@@ -22,7 +22,7 @@ payload:
   - DOMAIN-SUFFIX,googleapis.com
 
   # > CDN 代理
-  - DOMAIN-SUFFIX,cdn.jsdelivr.net
+  - DOMAIN-SUFFIX,jsdelivr.net
 
   # > 机场订阅需代理
   - DOMAIN-SUFFIX,benv2b.cf
@@ -32,6 +32,7 @@ payload:
   - DOMAIN-SUFFIX,kejilion.xyz
   - DOMAIN-SUFFIX,woiden.id
   - DOMAIN-SUFFIX,gstatic.com
+  - DOMAIN-SUFFIX,imnks.com
   - IP-CIDR,192.227.178.63/32
 
   #> dns相关
