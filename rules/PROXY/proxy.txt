@@ -18,6 +18,10 @@ payload:
   - DOMAIN-SUFFIX,blob.core.windows.net
   - DOMAIN-SUFFIX,officecdn.microsoft.com
   - DOMAIN-SUFFIX,officecdn.microsoft.com.edgesuite.net
+  
+  # > bing搜索
+  - DOMAIN-SUFFIX,bing.com
+  
   # > 谷歌翻译
   - DOMAIN-SUFFIX,googleapis.com
 
