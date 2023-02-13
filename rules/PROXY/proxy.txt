@@ -22,6 +22,9 @@ payload:
   # > bing搜索
   - DOMAIN-SUFFIX,bing.com
   
+  # > openai
+  - DOMAIN-SUFFIX,openai.com
+  
   # > 谷歌翻译
   - DOMAIN-SUFFIX,googleapis.com
 
