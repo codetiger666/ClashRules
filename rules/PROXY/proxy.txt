@@ -19,11 +19,9 @@ payload:
   - DOMAIN-SUFFIX,officecdn.microsoft.com
   - DOMAIN-SUFFIX,officecdn.microsoft.com.edgesuite.net
   
-  # > bing搜索
-  - DOMAIN-SUFFIX,bing.com
-  
-  # > openai
+  # > chatgpt
   - DOMAIN-SUFFIX,openai.com
+  - DOMAIN-SUFFIX,freegpt.one
   
   # > 谷歌翻译
   - DOMAIN-SUFFIX,googleapis.com
