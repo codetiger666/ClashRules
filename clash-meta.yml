@@ -1,71 +1,56 @@
-# Copyright (c) 2018 Dreamacro
-# 接管：不支持在此页面直接修改，请到全局设置页面进行修改
-
-# Port of HTTP(S) PROXY server on the local end
-# 此项将被接管
+# 本地http代理端口
 port: 7890
 
-# Port of SOCKS5 PROXY server on the local end
-# 此项将被接管
+# 本地socks5代理端口
 socks-port: 7891
 
-# Transparent PROXY server port for Linux and macOS
-# 此项将被接管
+# 本地Linux/macOS Redir代理端口
 redir-port: 7892
     
-# HTTP(S) and SOCKS5 server on the same port
+# 本地混合代理(http和socks5合并）端口
 mixed-port: 20000
 
-# Set to true to allow connections to the local-end server from
-# other LAN IP addresses
-# 此项将被接管为true
+# 允许局域网连接(false/true)
 allow-lan: true
 
-# This is only applicable when `allow-lan` is `true`
-# '*': bind all IP addresses
-# 192.168.122.11: bind a single IPv4 address
-# "[aaaa::a8aa:ff:fe09:57d8]": bind a single IPv6 address
-# HTTP(S)\SOCKS5 监听地址，此项将被接管为all
-bind-address: "*" 
+# geodata-mode: true         #【Meta专属】使用geoip.dat数据库(默认：false使用mmdb数据库)
+tcp-concurrent: true         #【Meta专属】TCP连接并发，如果域名解析结果对应多个IP，
+                             # 并发所有IP，选择握手最快的IP进行连接
 
-# Clash router working mode
-# rule: rule-based packet routing
-# global: all packets will be forwarded to a single endpoint
-# direct: directly forward the packets to the Internet
-# 此项将被接管
+# 监听IP白名单（当allow-lan：true），只允许列表设备
+bind-address: 
+  '*'                             #全部设备
+  # 192.168.122.11                #单个ip4地址
+  # "[aaaa::a8aa:ff:fe09:57d8]"   #单个ip6地址
+
+# clash工作模式（rule/global/direct）
 mode: rule
 
-# Clash by default prints logs to STDOUT
-# info / warning / error / debug / silent
-# 此项将被接管
+# 日志等级（info/warning/error/debug/silent）
 log-level: info
 
-# When set to false, resolver won't translate hostnames to IPv6 addresses
-# 此项将被接管
+# ip6开关，当为false时，停止解析hostanmes为ip6地址
 ipv6: true
 
-# RESTful web API listening address
-# 此项将被接管
+# 控制器监听地址
 external-controller: 0.0.0.0:9090
 
-# A relative path to the configuration directory or an absolute path to a
-# directory in which you put some static web resource. Clash core will then
-# serve it at `http://{{external-controller}}/ui`.
-# 此项将被接管
+# http服务路径，可以放静态web网页，如yacd的控制面板
+#可通过`http://{{external-controller}}/ui`直接使用
 #external-ui: "/usr/share/openclash/dashboard"
 
-# Secret for the RESTful API (optional)
-# Authenticate by spedifying HTTP header `Authorization: Bearer ${secret}`
-# ALWAYS set a secret if RESTful API is listening on 0.0.0.0
-# 此项将被接管
-secret: '123456'
+# 控制器登录密码
+secret: ''
 
-# authentication of local SOCKS5/HTTP(S) server
-# 此项将被接管
+# 本地SOCKS5/HTTP(S)代理端口认证设置
 authentication:
     
-# Outbound interface name
+# 出口网卡名称
 # interface-name: br-lan
+
+profile:                   #缓存设置(文件位置./cache.db)
+  store-selected: false    #节点状态记忆（若不同配置有同代理名称,设置值共享）
+  store-fake-ip: false      #fake-ip缓存
 
 # tun option
 # 此项将被接管
@@ -87,42 +72,27 @@ hosts:
   # '*.clash.dev': 127.0.0.1
   # '.dev': 127.0.0.1
   # 'alpha.clash.dev': '::1'
-  
-profile:
-  # store the `select` results in $HOME/.config/clash/.cache
-  # when two different configurations have groups with the same name, the selected values are shared
-  # set false if you don't want this behavior
-  store-selected: true
-  # open tracing exporter API
-  tracing: true
 
-# DNS server settings
-# This section is optional. When not present, the DNS server will be disabled.
-# 如订阅配置无包括此项的所有DNS设置，OpenClash将自动添加
+
+# DNS配置
 dns:
-  enable: true # set true to enable dns (default is false) # 此项将被接管为true
-  ipv6: true # default is false # 此项将被接管
-  listen: 0.0.0.0:7874 # 端口为53时将被接管为7874
-  # These nameservers are used to resolve the DNS nameserver hostnames below.
-  # Specify IP addresses only
+  enable: true # DNS开关(false/true)
+  ipv6: true # IP6解析开关；如果为false，将返回ip6结果为空
+  listen: 0.0.0.0:7874 # DNS监听地址
+  # 解析非IP的dns用的dns服务器,只支持纯IP
   default-nameserver:
     - 223.5.5.5
     - 129.29.29.29
-  enhanced-mode: redir-host # or fake-ip # 此项将被接管
-  fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR # 此项将被接管
-  use-hosts: false # lookup hosts and return IP record # 此项将被接管
-  fake-ip-filter:
-  - "+.*"
-  # Hostnames in this list will not be resolved with fake IPs
-  # i.e. questions to these domain names will always be answered with their
-  # real IP addresses
-  # fake-ip-filter:
-  #   - '*.lan'
-  #   - localhost.ptlogin2.qq.com
+  #nameserver-policy: #指定域名使用自定义DNS解析
+  # 'www.baidu.com': 'https://223.5.5.5/dns-query'
+  # '+.internal.crop.com': '114.114.114.114'  
+  enhanced-mode: redir-host # DNS模式(redir-host/fake-ip)
+  fake-ip-range: 198.18.0.1/16 # Fake-IP解析地址池
+  use-hosts: false # 查询hosts配置并返回真实IP
+  #fake-ip-filter: # Fake-ip过滤，列表中的域名返回真实ip
+  #  - "+.*"
   
-  # Supports UDP, TCP, DoT, DoH. You can specify the port to connect to.
-  # All DNS questions are sent directly to the nameserver, without proxies
-  # involved. Clash answers the DNS question with the first result gathered.
+  # 默认DNS服务器，支持udp/tcp/dot/doh/doq
   nameserver:
     - 223.5.5.5
     - 129.29.29.29
@@ -132,254 +102,170 @@ dns:
     - tls://dns.alidns.com:853
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-  fallback: # concurrent request with nameserver, fallback used when GEOIP country isn't CN
+  #  - quic://dns.adguard.com:784
+  fallback: # 回落DNS服务器，支持udp/tcp/dot/doh/doq
     - 8.8.8.8
     - 8.8.4.4
     - tls://8.8.8.8:853
     - https://dns.google/dns-query
     - https://dns.cloudflare.com/dns-query
-  fallback-filter:
-    geoip: false # default
-    geosite:
+  fallback-filter: # 回落DNS服务器过滤
+    geoip: true #为真时，不匹配为geoip规则的使用fallback返回结果
+    geoip-code: CN
+    geosite: # 设定geosite某分类使用fallback返回结果
       - gfw
       - greatfire
-    ipcidr: # ips in these subnets will be considered polluted
+    ipcidr: # 列表中的ip使用fallback返回解析结果
       - 240.0.0.0/4
-  
-# 以上设置您可直接覆盖到配置文件,无需更改
-# Openclash 不会对下方服务器设置进行任何更改，请确保设置正确
-
-#PROXY-providers: # 代理集设置，此部分与PROXY两者不能同时删除
-#  pro:
-#    type: http
-#    path: ./PROXY_provider/pro.yaml
-#    url: https://xxx
-#    interval: 3600
-#    health-check:
-#      enable: true
-#      url: http://www.gstatic.com/generate_204
-#      interval: 300
-#  iplc:
-#    type: file
-#    path: ./PROXY_provider/iplc.yaml
-#    health-check:
-#      enable: true
-#      url: http://www.gstatic.com/generate_204
-#      interval: 300
+    domain: # 列表中的域名使用fallback返回解析结果
+    - "+.google.*"
+    - "+.facebook.com"
+    - "+.youtube.com"
+    - "+.githubusercontent.com"
+    - "+.googlevideo.com"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - msftconnecttest.com
+    - msftncsi.com
       
 proxies: # 节点设置，此部分与PROXY-provider两者不能同时删除
   
-# Openclash 不会对下方策略组设置进行任何更改，请确保设置正确
+# 代理分组
 
 proxy-groups: # 此参数必须保留,不能删除
 
-# relay chains the proxies. proxies shall not contain a PROXY-group. No UDP support.
-# Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
-# - name: "relay"
-#   type: relay
-#   proxies:
-#     - http
-#     - vmess
-#     - ss1
-#     - ss2
-
-# # url-test select which PROXY will be used by benchmarking speed to a URL.
-# - name: "auto"
-#   type: url-test
-#   proxies:
-#     - ss1
-#     - ss2
-#     - vmess1
-#   url: 'http://www.gstatic.com/generate_204'
-#   interval: 300
-
-# # fallback select an available policy by priority. The availability is tested by accessing an URL, just like an auto url-test group.
-# - name: "fallback-auto"
-#   type: fallback
-#   proxies:
-#     - ss1
-#     - ss2
-#     - vmess1
-#   url: 'http://www.gstatic.com/generate_204'
-#   interval: 300
-
-# # load-balance: The request of the same eTLD will be dial on the same PROXY.
-# - name: "load-balance"
-#   type: load-balance
-#   strategy: consistent-hashing # or round-robin
-#   proxies:
-#     - ss1
-#     - ss2
-#     - vmess1
-#   url: 'http://www.gstatic.com/generate_204'
-#   interval: 300
-
-# # select is used for selecting PROXY or PROXY group
-# # you can use RESTful API to switch PROXY, is recommended for use in GUI.
-# - name: PROXY
-#   type: select
-#   proxies:
-#     - ss1
-#     - ss2
-#     - vmess1
-#     - auto
-  
-# - name: UseProvider
-#   type: select
-#   use:
-#     - provider1
-#   proxies:
-#     - PROXY
-#     - DIRECT
-- name: 🔰节点选择
+- name: 🔰节点选择 # 手动选择
   type: select
   proxies:
     - ♻️自动选择
     - 🟢全球直连
   
 
-- name: ♻️自动选择
+- name: ♻️自动选择 # URL测试(根据延迟)
   type: url-test
   url: http://www.google.co.jp/generate_204
   interval: 150
   proxies:
     - 🟢全球直连
 
-- name: 🔁自动选择fallback
+- name: 🔁自动选择fallback # URL测试(根据顺序)
   type: fallback
   proxies:
     - 🟢全球直连
   url: http://www.google.co.jp/generate_204
   interval: 150
 
-- name: ⚖️负载均衡
+- name: ⚖️负载均衡 # 负载均衡
   type: load-balance
   proxies:
     - 🟢全球直连
   url: http://www.google.co.jp/generate_204
   interval: 150
 
-- name: 📼国外媒体
-  type: select
-  proxies:
-    - 🔰节点选择
-    - ♻️自动选择
-    - 🟢全球直连
-
-- name: 🪟微软服务
-  type: select
-  proxies:
-    - 🔰节点选择
-    - ♻️自动选择
-    - 🟢全球直连
-
-- name: 📻YOUTUBE
-  type: select
-  proxies:
-    - 🔰节点选择
-    - ♻️自动选择
-    - 🟢全球直连
-
-- name: 📺NETFLIX
-  type: select	
-  proxies:
-    - 🔰节点选择
-    - ♻️自动选择
-    - 🟢全球直连
-
-
-- name: 🍎苹果服务
-  type: select
-  proxies:
-    - 🔰节点选择
-    - ♻️自动选择
-    - 🟢全球直连
-
-
-- name: 🍏ICLOUD
-  type: select
-  proxies:
-    - 🔰节点选择
-    - ♻️自动选择
-    - 🟢全球直连
-
-
-- name: 🟢全球直连
-  type: select
-  proxies:
-    - DIRECT
-
-- name: ⭕全球拦截
-  type: select
-  proxies:
-    - REJECT
-
-- name: 🌏GOOGLE
-  type: select
-  proxies:
-    - 🔰节点选择
-    - ♻️自动选择
-    - 🟢全球直连
-
-- name: 🌐PROXY
-  type: select
-  proxies:
-    - 🔰节点选择
-    - ♻️自动选择
-    - 🟢全球直连
-
-
-- name: 🗺️NOTCN
-  type: select
-  proxies:
-    - 🔰节点选择
-    - ♻️自动选择
-    - 🟢全球直连
-
-
-- name: 🏎️SPEEDTEST
-  type: select
-  proxies:
-    - 🔰节点选择
-    - ♻️自动选择
-    - 🟢全球直连
-
-- name: 🐟漏网之鱼
+- name: 📼国外媒体 # 手动选择
   type: select
   proxies:
     - 🔰节点选择
     - 🔁自动选择fallback
     - ♻️自动选择
     - 🟢全球直连
-# - name: "NOTCN"
-#   type: url-test
-#   proxies:
-#     - 日本
-#     - DIRECT
-#   url: 'http://www.gstatic.com/generate_204'
-#   interval: 300
-# https://lancellc.gitbook.io/clash/clash-config-file/rule-provider
-#rule-providers:
-#  name: # name of the provider
-#    type: http # type of the provider, it can be a HTTP or a File
-#    behavior: classical # or ipcidr、domain
-#    path: # where is the file, ./ relative to clash home
-#    url: # only available when type is HTTP, where to download a file. You don't need to create a new file in local space.
-#    interval: # auto-update interval, only available when type is HTTP
 
-# https://lancellc.gitbook.io/clash/clash-config-file/script
-#script:
-#  code: |
-#    def main(ctx, metadata):
-#      ip = metadata["dst_ip"] = ctx.resolve_ip(metadata["host"])
-#      if ip == "":
-#        return "DIRECT"
-#        
-#      code = ctx.geoip(ip)
-#      if code == "LAN" or code == "CN":
-#        return "DIRECT"
-#      
-#      return "PROXY" # default policy for requests which are not matched by any other script
+- name: 🪟微软服务 # 手动选择
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
+- name: 📻YOUTUBE # 手动选择
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
+- name: 📺NETFLIX # 手动选择
+  type: select	
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
+
+- name: 🍎苹果服务 # 手动选择
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
+
+- name: 🍏ICLOUD # 手动选择
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
+
+- name: 🟢全球直连 # 手动选择
+  type: select
+  proxies:
+    - DIRECT
+
+- name: ⭕全球拦截 # 手动选择
+  type: select
+  proxies:
+    - REJECT
+
+- name: 🌏GOOGLE # 手动选择
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
+- name: 🌐PROXY # 手动选择
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
+
+- name: 🗺️NOTCN # 手动选择
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
+
+- name: 🏎️SPEEDTEST # 手动选择
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
+- name: 🐟漏网之鱼 # 手动选择
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
+# 分流规则组
 rule-providers:
 # https://github.com/Loyalsoldier/clash-rules 仓库规则
   reject:
@@ -480,22 +366,6 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
 
-# https://github.com/snapei/clash-pro-rules 仓库规则
-  # fcm:
-  #   type: http
-  #   behavior: classical
-  #   url: https://raw.codetiger.gq/lhie1/Rules/master/Clash/Provider/Google%20FCM.yaml
-  #   path: "./ruleset/fcm.yaml"
-  #   interval: 86400
-
-
-  # youtube:
-  #   type: http
-  #   behavior: classical
-  #   url: https://raw.codetiger.gq/lhie1/Rules/master/Clash/Provider/Media/YouTube.yaml
-  #   path: "./ruleset/youtube.yaml"
-  #   interval: 86400
-
   netflixcidr:
     type: http
     behavior: ipcidr
@@ -540,6 +410,7 @@ rule-providers:
     path: ./ruleset/nn-proxy.yaml
     interval: 86400
 
+# 分流规则
 rules:
   # - RULE-SET,applications,🟢全球直连
   - RULE-SET,nn-direct,🟢全球直连
