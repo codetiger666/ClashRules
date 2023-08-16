@@ -9,7 +9,8 @@ payload:
   - DOMAIN-SUFFIX,yzjx.tk
   - DOMAIN-SUFFIX,lingfeicloud.com
   - DOMAIN-SUFFIX,gybyt.cn
-  - DOMAIN-SUFFIX,codetiger.gq
+  - DOMAIN-SUFFIX,gybyt.eu.org
+  - DOMAIN-SUFFIX,codetiger.eu.org
 
   # > 需要直连的服务
   - DOMAIN-SUFFIX,uc.qbox.me
