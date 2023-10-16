@@ -6,10 +6,12 @@ payload:
   # > git相关服务
   - DOMAIN-SUFFIX,git.io
   - DOMAIN-SUFFIX,github.io
+  - DOMAIN-SUFFIX,github.com
   # > 编程服务相关
   - DOMAIN-SUFFIX,golang.org
   - DOMAIN-SUFFIX,visualstudio.com
   - DOMAIN-SUFFIX,netgate.com
+  - DOMAIN-SUFFIX,docker.com
   
   # > Onedrive相关服务
   - DOMAIN-SUFFIX,storage.live.com  
