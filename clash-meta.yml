@@ -381,13 +381,13 @@ rule-providers:
   micrsoft:
     type: http
     behavior: classical
-    url: https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/Semporia/ClashX-Pro/master/Filter/Microsoft.yaml
+    url: https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/Semporia/Clash/master/Rule/Microsoft.yaml
     path: "./ruleset/micrsoft.yaml"
     interval: 86400
   speedtest:
     type: http
     behavior: classical
-    url: https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/Semporia/ClashX-Pro/master/Filter/Speedtest.yaml
+    url: https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/Semporia/Clash/master/Rule/Speedtest.yaml
     path: "./ruleset/speedtest.yaml"
     interval: 86400
 
@@ -396,14 +396,14 @@ rule-providers:
   nn-direct:
     type: http
     behavior: classical
-    url: "https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/DIRECT/direct.txt"
+    url: "https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/DIRECT/direct.yaml"
     path: ./ruleset/nn-direct.yaml
     interval: 86400
     
   nn-proxy:
     type: http
     behavior: classical
-    url: "https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/proxy.txt"
+    url: "https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/proxy.yaml"
     path: ./ruleset/nn-proxy.yaml
     interval: 86400
 

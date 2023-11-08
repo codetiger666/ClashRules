@@ -7,8 +7,6 @@ payload:
   # > 自有域名服务
   - DOMAIN-SUFFIX,yrjw.tk
   - DOMAIN-SUFFIX,yzjx.tk
-  - DOMAIN-SUFFIX,lingfeicloud.com
-  - DOMAIN-SUFFIX,gybyt.cn
   - DOMAIN-SUFFIX,gybyt.eu.org
   - DOMAIN-SUFFIX,codetiger.eu.org
 
@@ -19,4 +17,3 @@ payload:
   - DOMAIN-SUFFIX,icloud.com.cn
   - DOMAIN-SUFFIX,apple.com.cn
   - DOMAIN-SUFFIX,apple.com
-  #- DOMAIN-KEYWORD,jsdelivr

@@ -23,7 +23,6 @@ payload:
   
   # > chatgpt
   - DOMAIN-SUFFIX,openai.com
-  - DOMAIN-SUFFIX,freegpt.one
   
   # > 谷歌翻译
   - DOMAIN-SUFFIX,googleapis.com
@@ -31,10 +30,6 @@ payload:
   # > CDN 代理
   - DOMAIN-SUFFIX,jsdelivr.net
 
-  # > 机场订阅需代理
-  - DOMAIN-SUFFIX,benv2b.cf
-  - DOMAIN-SUFFIX,netgate.com
-  - DOMAIN-SUFFIX,shoujiyanxishe.tk
   # > 其他需代理
   - DOMAIN-SUFFIX,kejilion.xyz
   - DOMAIN-SUFFIX,woiden.id
