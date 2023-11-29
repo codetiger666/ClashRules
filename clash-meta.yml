@@ -307,6 +307,13 @@ rule-providers:
     path: ./ruleset/direct.yaml
     interval: 86400
 
+  chinaDomain:
+    type: http
+    behavior: domain
+    url: "https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/RealSeek/Clash_Rule_DIY/master/DIRECT/ChinaDomain.yaml"
+    path: ./ruleset/chinaDomain.yaml
+    interval: 86400
+
   private:
     type: http
     behavior: domain
@@ -378,10 +385,10 @@ rule-providers:
     interval: 86400
 
 # https://github.com/Semporia/ClashX-Pro/ 仓库规则
-  micrsoft:
+  onedrive:
     type: http
     behavior: classical
-    url: https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/Semporia/Clash/master/Rule/Microsoft.yaml
+    url: https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/RealSeek/Clash_Rule_DIY/master/PROXY/OneDrive.yaml
     path: "./ruleset/micrsoft.yaml"
     interval: 86400
   speedtest:
@@ -389,6 +396,12 @@ rule-providers:
     behavior: classical
     url: https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/Semporia/Clash/master/Rule/Speedtest.yaml
     path: "./ruleset/speedtest.yaml"
+    interval: 86400
+  openai:
+    type: http
+    behavior: classical
+    url: https://proxyurl.gybyt.eu.org/https://raw.githubusercontent.com/zzcabc/Rules/master/Rules_Provider/Complete/Other/OpenAI.yaml
+    path: "./ruleset/openai.yaml"
     interval: 86400
 
 # 私人仓库规则
@@ -412,10 +425,12 @@ rules:
   # - RULE-SET,applications,🟢全球直连
   - RULE-SET,nn-direct,🟢全球直连
   - RULE-SET,nn-proxy,🌐PROXY
+  - RULE-SET,openai,🌐PROXY
   - RULE-SET,reject,⭕全球拦截
   - RULE-SET,lancidr,🟢全球直连,no-resolve
   - RULE-SET,cncidr,🟢全球直连,no-resolve
   - RULE-SET,direct,🟢全球直连
+  - RULE-SET,chinaDomain,🟢全球直连
   - GEOSITE,cn,🟢全球直连
   - GEOSITE,tld-cn,🟢全球直连
   - GEOSITE,category-games@cn,🟢全球直连
@@ -423,7 +438,7 @@ rules:
   - RULE-SET,icloud,🍏ICLOUD
   - RULE-SET,apple,🍎苹果服务
   # - RULE-SET,fcm,🟢全球直连
-  - RULE-SET,micrsoft,🪟微软服务
+  - RULE-SET,onedrive,🪟微软服务
   - RULE-SET,google,🌏GOOGLE
   # - RULE-SET,youtube,📻YOUTUBE
   - RULE-SET,netflix,📺NETFLIX
