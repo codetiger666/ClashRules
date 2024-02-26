@@ -23,6 +23,7 @@ payload:
   
   # > chatgpt
   - DOMAIN-SUFFIX,openai.com
+  - DOMAIN-SUFFIX,cocopilot.org
   
   # > 谷歌翻译
   - DOMAIN-SUFFIX,googleapis.com
