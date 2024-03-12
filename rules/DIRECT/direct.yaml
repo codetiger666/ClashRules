@@ -17,3 +17,7 @@ payload:
   - DOMAIN-SUFFIX,icloud.com.cn
   - DOMAIN-SUFFIX,apple.com.cn
   - DOMAIN-SUFFIX,apple.com
+
+  # > 甲骨文ip段
+  - IP-CIDR,151.145.0.0/16
+  - IP-CIDR,158.101.0.0/16
