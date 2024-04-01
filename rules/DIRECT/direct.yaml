@@ -7,6 +7,9 @@ payload:
   # > 自有域名服务
   - DOMAIN-SUFFIX,yrjw.tk
   - DOMAIN-SUFFIX,yzjx.tk
+  - DOMAIN-SUFFIX,lfyun.tk
+  - DOMAIN-SUFFIX,lfyun.cf
+  - DOMAIN-SUFFIX,lfcloud.tk
   - DOMAIN-SUFFIX,gybyt.eu.org
   - DOMAIN-SUFFIX,codetiger.eu.org
 
