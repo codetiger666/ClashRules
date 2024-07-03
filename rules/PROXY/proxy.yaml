@@ -27,6 +27,7 @@ payload:
   
   # > 谷歌翻译
   - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN-SUFFIX,googleapis.cn
 
   # > CDN 代理
   - DOMAIN-SUFFIX,jsdelivr.net
