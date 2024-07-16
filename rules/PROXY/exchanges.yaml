@@ -1,0 +1,5 @@
+payload:
+  # 交易所
+  - DOMAIN-SUFFIX,bybit.com
+  - DOMAIN-KEYWORD,bitget
+  - DOMAIN-SUFFIX,binance.com
