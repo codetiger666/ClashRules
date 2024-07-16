@@ -236,6 +236,14 @@ proxy-groups: # 此参数必须保留,不能删除
     - ♻️自动选择
     - 🟢全球直连
 
+- name: 💰交易所 
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
 
 - name: 🗺️NOTCN # 手动选择
   type: select
@@ -420,9 +428,17 @@ rule-providers:
     path: ./ruleset/nn-proxy.yaml
     interval: 86400
 
+  nn-exchanges:
+    type: http
+    behavior: classical
+    url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/exchanges.yaml"
+    path: ./ruleset/nn-exchanges.yaml
+    interval: 86400
+
 # 分流规则
 rules:
   # - RULE-SET,applications,🟢全球直连
+  - RULE-SET,nn-exchanges,💰交易所
   - RULE-SET,nn-direct,🟢全球直连
   - RULE-SET,nn-proxy,🌐PROXY
   - RULE-SET,openai,🌐PROXY
