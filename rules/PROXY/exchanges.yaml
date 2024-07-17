@@ -1,8 +1,19 @@
 payload:
   # 交易所
+  #> bybit
   - DOMAIN-SUFFIX,bybit.com
+  - DOMAIN-SUFFIX,bybit.org
+  - DOMAIN-SUFFIX,bybit.biz
+  - DOMAIN-SUFFIX,bybdc6.com
+  - DOMAIN-SUFFIX,byd3c3.com
+  - DOMAIN-SUFFIX,byabcde.com
+  - DOMAIN-SUFFIX,bybitglobal.com
+  - DOMAIN-SUFFIX,bybit.cloud
+  - DOMAIN-SUFFIX,bitverse.zone
+  #> bitget
   - DOMAIN-KEYWORD,bitget
+  #> 币安
   - DOMAIN-SUFFIX,binance.com
   - DOMAIN-SUFFIX,binance.info
-  - DOMAIN-SUFFIX,byd3c3.com
-  - DOMAIN-SUFFIX,bybit.org
+  
+  
