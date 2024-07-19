@@ -25,4 +25,3 @@ payload:
   # > 甲骨文ip段
   - IP-CIDR,151.145.0.0/16
   - IP-CIDR,158.101.0.0/16
-  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
