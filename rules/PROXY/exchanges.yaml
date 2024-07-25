@@ -15,5 +15,7 @@ payload:
   #> 币安
   - DOMAIN-SUFFIX,binance.com
   - DOMAIN-SUFFIX,binance.info
+  #> 海妖
+  - DOMAIN-SUFFIX,kraken.com
   
   
