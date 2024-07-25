@@ -42,5 +42,3 @@ payload:
   # > bing
   - DOMAIN-SUFFIX,th.bing.com
   
-  # > 手机卡
-  - DOMAIN-SUFFIX,giffgaff.com
