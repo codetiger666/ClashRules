@@ -104,9 +104,14 @@ dns:
     - https://doh.pub/dns-query
   #  - quic://dns.adguard.com:784
   fallback: # 回落DNS服务器，支持udp/tcp/dot/doh/doq
+    - tcp://1.1.1.1
+    - tcp://1.0.0.1
     - tcp://8.8.8.8
     - tcp://8.8.4.4
     - tls://8.8.8.8:853
+    - tls://1.1.1.1:853
+    - tls://1.0.0.1:853
+    - tls://8.8.4.4:853
     - https://dns.google/dns-query
     - https://dns.cloudflare.com/dns-query
   fallback-filter: # 回落DNS服务器过滤
@@ -229,6 +234,22 @@ proxy-groups: # 此参数必须保留,不能删除
     - 🟢全球直连
 
 - name: 🌐PROXY # 手动选择
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
+- name: 🗺自定义代理 # 手动选择
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+    
+- name: 🔑dns # 手动选择
   type: select
   proxies:
     - 🔰节点选择
@@ -435,12 +456,20 @@ rule-providers:
     path: ./ruleset/nn-exchanges.yaml
     interval: 86400
 
+  nn-dns:
+    type: http
+    behavior: classical
+    url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/dns.yaml"
+    path: ./ruleset/nn-dns.yaml
+    interval: 86400
+
 # 分流规则
 rules:
   # - RULE-SET,applications,🟢全球直连
   - RULE-SET,nn-exchanges,💰交易所
   - RULE-SET,nn-direct,🟢全球直连
-  - RULE-SET,nn-proxy,🌐PROXY
+  - RULE-SET,nn-proxy,🗺自定义代理
+  - RULE-SET,nn-dns,🔑dns
   - RULE-SET,openai,🌐PROXY
   - RULE-SET,reject,⭕全球拦截
   - RULE-SET,lancidr,🟢全球直连,no-resolve

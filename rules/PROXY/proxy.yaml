@@ -42,11 +42,3 @@ payload:
   # > bing
   - DOMAIN-SUFFIX,th.bing.com
 
-  #> dns相关
-  - IP-CIDR,1.1.1.1/32
-  - IP-CIDR,8.8.8.8/32
-  - IP-CIDR,8.8.4.4/32
-  - DOMAIN,cloudflare-dns.com
-  - DOMAIN,dns.google
-  - IP-CIDR6,2001:4860:4860::8888/32
-  - IP-CIDR6,2001:4860:4860::8844/32
