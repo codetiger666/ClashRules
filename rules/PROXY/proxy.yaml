@@ -41,4 +41,7 @@ payload:
 
   # > bing
   - DOMAIN-SUFFIX,th.bing.com
+
+  # > 论坛
+  - DOMAIN-SUFFIX,linux.do
   
