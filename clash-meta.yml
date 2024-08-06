@@ -299,119 +299,119 @@ rule-providers:
     behavior: domain
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
     path: ./ruleset/reject.yaml
-    interval: 86400
+    interval: 3600
 
   icloud:
     type: http
     behavior: domain
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt"
     path: ./ruleset/icloud.yaml
-    interval: 86400
+    interval: 3600
 
   apple:
     type: http
     behavior: domain
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt"
     path: ./ruleset/apple.yaml
-    interval: 86400
+    interval: 3600
 
   google:
     type: http
     behavior: domain
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt"
     path: ./ruleset/google.yaml
-    interval: 86400
+    interval: 3600
 
   PROXY:
     type: http
     behavior: domain
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
     path: ./ruleset/proxy.yaml
-    interval: 86400
+    interval: 3600
 
   direct:
     type: http
     behavior: domain
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
     path: ./ruleset/direct.yaml
-    interval: 86400
+    interval: 3600
 
   chinaDomain:
     type: http
     behavior: domain
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/RealSeek/Clash_Rule_DIY/master/DIRECT/ChinaDomain.yaml"
     path: ./ruleset/chinaDomain.yaml
-    interval: 86400
+    interval: 3600
 
   private:
     type: http
     behavior: domain
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt"
     path: ./ruleset/private.yaml
-    interval: 86400
+    interval: 3600
 
   gfw:
     type: http
     behavior: domain
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt"
     path: ./ruleset/gfw.yaml
-    interval: 86400
+    interval: 3600
 
   greatfire:
     type: http
     behavior: domain
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/greatfire.txt"
     path: ./ruleset/greatfire.yaml
-    interval: 86400
+    interval: 3600
 
   tld-not-cn:
     type: http
     behavior: domain
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt"
     path: ./ruleset/tld-not-cn.yaml
-    interval: 86400
+    interval: 3600
 
   telegramcidr:
     type: http
     behavior: ipcidr
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
     path: ./ruleset/telegramcidr.yaml
-    interval: 86400
+    interval: 3600
 
   cncidr:
     type: http
     behavior: ipcidr
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt"
     path: ./ruleset/cncidr.yaml
-    interval: 86400
+    interval: 3600
 
   lancidr:
     type: http
     behavior: ipcidr
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
     path: ./ruleset/lancidr.yaml
-    interval: 86400
+    interval: 3600
 
   applications:
     type: http
     behavior: classical
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
     path: ./ruleset/applications.yaml
-    interval: 86400
+    interval: 3600
 
   netflixcidr:
     type: http
     behavior: ipcidr
     url: https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/codetiger666/clash-pro-rules/release/netflixcidr.txt
     path: "./ruleset/netflixcidr.yaml"
-    interval: 86400
+    interval: 3600
 
   netflix:
     type: http
     behavior: domain
     url: https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/codetiger666/clash-pro-rules/release/netflix.txt
     path: "./ruleset/netflix.yaml"
-    interval: 86400
+    interval: 3600
 
 # https://github.com/Semporia/ClashX-Pro/ 仓库规则
   onedrive:
@@ -419,19 +419,19 @@ rule-providers:
     behavior: classical
     url: https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/RealSeek/Clash_Rule_DIY/master/PROXY/OneDrive.yaml
     path: "./ruleset/micrsoft.yaml"
-    interval: 86400
+    interval: 3600
   speedtest:
     type: http
     behavior: classical
     url: https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/Semporia/Clash/master/Rule/Speedtest.yaml
     path: "./ruleset/speedtest.yaml"
-    interval: 86400
+    interval: 3600
   openai:
     type: http
     behavior: classical
     url: https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/zzcabc/Rules/master/Rules_Provider/Complete/Other/OpenAI.yaml
     path: "./ruleset/openai.yaml"
-    interval: 86400
+    interval: 3600
 
 # 私人仓库规则
 
@@ -440,28 +440,28 @@ rule-providers:
     behavior: classical
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/DIRECT/direct.yaml"
     path: ./ruleset/nn-direct.yaml
-    interval: 86400
+    interval: 3600
     
   nn-proxy:
     type: http
     behavior: classical
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/proxy.yaml"
     path: ./ruleset/nn-proxy.yaml
-    interval: 86400
+    interval: 3600
 
   nn-exchanges:
     type: http
     behavior: classical
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/exchanges.yaml"
     path: ./ruleset/nn-exchanges.yaml
-    interval: 86400
+    interval: 3600
 
   nn-dns:
     type: http
     behavior: classical
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/dns.yaml"
     path: ./ruleset/nn-dns.yaml
-    interval: 86400
+    interval: 3600
 
 # 分流规则
 rules:
