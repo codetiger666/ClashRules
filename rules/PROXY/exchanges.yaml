@@ -21,5 +21,8 @@ payload:
   - DOMAIN-SUFFIX,binance.info
   #> 海妖
   - DOMAIN-SUFFIX,kraken.com
+  #> tg钱包
+  - DOMAIN-SUFFIX,ton.space
+  - DOMAIN-SUFFIX,walletbot.me
   
   
