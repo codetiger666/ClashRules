@@ -21,10 +21,6 @@ payload:
   - DOMAIN-SUFFIX,icloud.com.cn
   - DOMAIN-SUFFIX,apple.com.cn
   - DOMAIN-SUFFIX,apple.com
-  # > 微信
-  - IP-CIDR,43.160.144.13/32
-  - IP-CIDR,101.32.133.53/32
-
    # > openai
   - DOMAIN-SUFFIX,shared.oaifree.com
 
