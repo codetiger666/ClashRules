@@ -370,7 +370,7 @@ rule-providers:
 
   chinaDomain:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://proxyurl.lfyun.tk/https://raw.githubusercontent.com/RealSeek/Clash_Rule_DIY/master/DIRECT/ChinaDomain.yaml"
     path: ./ruleset/chinaDomain.yaml
     interval: 3600
