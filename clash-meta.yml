@@ -24,7 +24,7 @@ geox-url:
   mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb"
 
 geo-auto-update: true # 是否自动更新 geodata
-geo-update-interval: 24 # 更新间隔，单位：小时
+geo-update-interval: 720 # 更新间隔，单位：小时
 
 # 监听IP白名单（当allow-lan：true），只允许列表设备
 bind-address: 
