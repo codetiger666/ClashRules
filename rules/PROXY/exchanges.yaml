@@ -24,5 +24,7 @@ payload:
   #> tg钱包
   - DOMAIN-SUFFIX,ton.space
   - DOMAIN-SUFFIX,walletbot.me
+  #> 欧易
+  - DOMAIN-SUFFIX,okx.com
   
   
