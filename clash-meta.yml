@@ -103,8 +103,17 @@ dns:
       - tls://dns.alidns.com:853
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
+    "rule-set:direct,chinaDomain,nn-direct":
+      - 223.5.5.5
+      - 129.29.29.29
+      - "[2400:3200::1]:53"
+      - "[2402:4e00::]:53"
+      - tls://dot.pub:853
+      - tls://dns.alidns.com:853
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
     "geosite:category-ads-all": rcode://success
-    "rule-set:icloud,apple,google,PROXY,gfw,greatfire,tld-not-cn,netflix,onedrive,speedtest,openai":
+    "rule-set:icloud,apple,google,PROXY,gfw,greatfire,tld-not-cn,netflix,onedrive,speedtest,openai,nn-exchanges,nn-proxy,nn-dns":
       - https://dns.google/dns-query
       - https://dns.cloudflare.com/dns-query
 
