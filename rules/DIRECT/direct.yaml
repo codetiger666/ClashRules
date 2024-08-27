@@ -21,8 +21,11 @@ payload:
   - DOMAIN-SUFFIX,icloud.com.cn
   - DOMAIN-SUFFIX,apple.com.cn
   - DOMAIN-SUFFIX,apple.com
-   # > openai
+  # > openai
   - DOMAIN-SUFFIX,shared.oaifree.com
+
+  # > jsdelivr
+  - DOMAIN-SUFFIX,testingcf.jsdelivr.net
 
   # > 甲骨文
   - DOMAIN-SUFFIX,oracle.com
