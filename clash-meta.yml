@@ -69,7 +69,7 @@ tun:
  stack: system
  dns-hijack:
  - tcp://223.5.5.5:53
- - tcp://129.29.29.29:53
+ - tcp://119.29.29.29:53
 
 # Static hosts for DNS server and connection establishment, only works
 # when `dns.enhanced-mode` is `redir-host`.
@@ -93,11 +93,11 @@ dns:
   # 解析非IP的dns用的dns服务器,只支持纯IP
   default-nameserver:
     - 223.5.5.5
-    - 129.29.29.29
+    - 119.29.29.29
   nameserver-policy: #指定域名使用自定义DNS解析
     "geosite:cn,private,apple":
       - 223.5.5.5
-      - 129.29.29.29
+      - 119.29.29.29
       - "[2400:3200::1]:53"
       - "[2402:4e00::]:53"
       - tls://dot.pub:853
@@ -106,7 +106,7 @@ dns:
       - https://doh.pub/dns-query
     "rule-set:direct,chinaDomain,nn-direct":
       - 223.5.5.5
-      - 129.29.29.29
+      - 119.29.29.29
       - "[2400:3200::1]:53"
       - "[2402:4e00::]:53"
       - tls://dot.pub:853
@@ -123,7 +123,7 @@ dns:
   use-hosts: false # 查询hosts配置并返回真实IP
   nameserver:
     - 223.5.5.5
-    - 129.29.29.29
+    - 119.29.29.29
     - "[2400:3200::1]:53"
     - "[2402:4e00::]:53"
     - tls://dot.pub:853
@@ -132,7 +132,7 @@ dns:
     - https://doh.pub/dns-query
   nameserver:
     - 223.5.5.5
-    - 129.29.29.29
+    - 119.29.29.29
     - "[2400:3200::1]:53"
     - "[2402:4e00::]:53"
     - tls://dot.pub:853
