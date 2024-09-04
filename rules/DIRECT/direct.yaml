@@ -13,6 +13,7 @@ payload:
   - DOMAIN-SUFFIX,lfcloud.tk
   - DOMAIN-SUFFIX,gybyt.eu.org
   - DOMAIN-SUFFIX,codetiger.eu.org
+  - DOMAIN-SUFFIX,111179.xyz
 
   # > 需要直连的服务
   - DOMAIN-SUFFIX,uc.qbox.me
