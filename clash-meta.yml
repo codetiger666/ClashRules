@@ -79,6 +79,9 @@ tun:
 # e.g. foo.example.com > *.example.com > .example.com
 # P.S. +.foo.com equals to .foo.com and foo.com
 hosts:
+  # cname域名映射
+  shared.oaifree.com: edge.codetiger.eu.org
+  linux.do: edge.codetiger.eu.org
   # '*.clash.dev': 127.0.0.1
   # '.dev': 127.0.0.1
   # 'alpha.clash.dev': '::1'
