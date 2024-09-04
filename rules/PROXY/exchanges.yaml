@@ -14,7 +14,6 @@ payload:
   - DOMAIN-SUFFIX,bybit.cloud
   - DOMAIN-SUFFIX,bitverse.zone
   - DOMAIN-SUFFIX,gw.irs03.com
-  - DOMAIN-KEYWORD,bybit
   #> bitget
   - DOMAIN-KEYWORD,bitget
   #> 币安
