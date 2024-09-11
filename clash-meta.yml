@@ -99,8 +99,8 @@ dns:
     - 119.29.29.29
   # 专用于节点域名解析的 DNS 服务器，非必要配置项
   proxy-server-nameserver:
-   - 223.5.5.5
-   - 119.29.29.29
+    - 223.5.5.5
+    - 119.29.29.29
   nameserver-policy: #指定域名使用自定义DNS解析
     "geosite:cn,private,apple":
       - 223.5.5.5
