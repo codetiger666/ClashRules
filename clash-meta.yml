@@ -121,11 +121,12 @@ dns:
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
     geosite:category-ads-all: rcode://success
-    rule-set:
-      icloud,apple,google,proxy,gfw,greatfire,tld-not-cn,netflix,onedrive,speedtest,openai,codetiger-exchanges,codetiger-proxy,codetiger-dns:
-        - https://dns.google/dns-query
-        - https://dns.cloudflare.com/dns-query
-
+    rule-set:icloud,apple,google,proxy,gfw,greatfire,tld-not-cn,netflix,onedrive,speedtest,openai:
+      - https://dns.google/dns-query
+      - https://dns.cloudflare.com/dns-query
+    rule-set:codetiger-exchanges,codetiger-proxy,codetiger-dns:
+      - https://dns.google/dns-query
+      - https://dns.cloudflare.com/dns-query
   enhanced-mode: redir-host # DNS模式(redir-host/fake-ip)
   fake-ip-range: 198.18.0.1/16 # Fake-IP解析地址池
   # 是否使用系统hosts
