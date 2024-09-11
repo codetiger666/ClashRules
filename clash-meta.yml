@@ -97,6 +97,10 @@ dns:
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
+  # 专用于节点域名解析的 DNS 服务器，非必要配置项
+  proxy-server-nameserver:
+   - 223.5.5.5
+   - 119.29.29.29
   nameserver-policy: #指定域名使用自定义DNS解析
     "geosite:cn,private,apple":
       - 223.5.5.5
@@ -107,7 +111,7 @@ dns:
       - tls://dns.alidns.com:853
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
-    "rule-set:direct,chinaDomain,nn-direct":
+    "rule-set:direct,chinadomain,codetiger-direct":
       - 223.5.5.5
       - 119.29.29.29
       - "[2400:3200::1]:53"
@@ -117,13 +121,14 @@ dns:
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
     "geosite:category-ads-all": rcode://success
-    "rule-set:icloud,apple,google,PROXY,gfw,greatfire,tld-not-cn,netflix,onedrive,speedtest,openai,nn-exchanges,nn-proxy,nn-dns":
+    "rule-set:icloud,apple,google,proxy,gfw,greatfire,tld-not-cn,netflix,onedrive,speedtest,openai,codetiger-exchanges,codetiger-proxy,codetiger-dns":
       - https://dns.google/dns-query
       - https://dns.cloudflare.com/dns-query
 
   enhanced-mode: redir-host # DNS模式(redir-host/fake-ip)
   fake-ip-range: 198.18.0.1/16 # Fake-IP解析地址池
-  use-hosts: false # 查询hosts配置并返回真实IP
+  ＃ 是否使用系统hosts
+  use-hosts: false
   nameserver:
     - 223.5.5.5
     - 119.29.29.29
@@ -358,7 +363,7 @@ rule-providers:
     path: ./ruleset/google.yaml
     interval: 3600
 
-  PROXY:
+  proxy:
     type: http
     behavior: domain
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
@@ -372,7 +377,7 @@ rule-providers:
     path: ./ruleset/direct.yaml
     interval: 3600
 
-  chinaDomain:
+  chinadomain:
     type: http
     behavior: classical
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/RealSeek/Clash_Rule_DIY/master/DIRECT/ChinaDomain.yaml"
@@ -477,48 +482,48 @@ rule-providers:
 
 # 私人仓库规则
 
-  nn-direct:
+  codetiger-direct:
     type: http
     behavior: classical
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/DIRECT/direct.yaml"
-    path: ./ruleset/nn-direct.yaml
+    path: ./ruleset/codetiger-direct.yaml
     interval: 3600
     
-  nn-proxy:
+  codetiger-proxy:
     type: http
     behavior: classical
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/proxy.yaml"
-    path: ./ruleset/nn-proxy.yaml
+    path: ./ruleset/codetiger-proxy.yaml
     interval: 3600
 
-  nn-exchanges:
+  codetiger-exchanges:
     type: http
     behavior: classical
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/exchanges.yaml"
-    path: ./ruleset/nn-exchanges.yaml
+    path: ./ruleset/codetiger-exchanges.yaml
     interval: 3600
 
-  nn-dns:
+  codetiger-dns:
     type: http
     behavior: classical
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/dns.yaml"
-    path: ./ruleset/nn-dns.yaml
+    path: ./ruleset/codetiger-dns.yaml
     interval: 3600
 
 # 分流规则
 rules:
   # - RULE-SET,applications,🟢全球直连
-  - RULE-SET,nn-exchanges,💰交易所
-  - RULE-SET,nn-direct,🟢全球直连
-  - RULE-SET,nn-proxy,🗺自定义代理
-  - RULE-SET,nn-dns,🔑dns
+  - RULE-SET,codetiger-exchanges,💰交易所
+  - RULE-SET,codetiger-direct,🟢全球直连
+  - RULE-SET,codetiger-proxy,🗺自定义代理
+  - RULE-SET,codetiger-dns,🔑dns
   - RULE-SET,wechat,🟢全球直连
   - RULE-SET,openai,🌐PROXY
   - RULE-SET,reject,⭕全球拦截
   - RULE-SET,lancidr,🟢全球直连,no-resolve
   - RULE-SET,cncidr,🟢全球直连,no-resolve
   - RULE-SET,direct,🟢全球直连
-  - RULE-SET,chinaDomain,🟢全球直连
+  - RULE-SET,chinadomain,🟢全球直连
   - GEOSITE,cn,🟢全球直连
   - GEOSITE,tld-cn,🟢全球直连
   - GEOSITE,category-games@cn,🟢全球直连
@@ -536,5 +541,5 @@ rules:
   - RULE-SET,greatfire,🌐PROXY
   # - RULE-SET,tld-not-cn,🗺️NOTCN
   - RULE-SET,telegramcidr,🌐PROXY,no-resolve
-  - RULE-SET,PROXY,🌐PROXY
+  - RULE-SET,proxy,🌐PROXY
   - MATCH,🐟漏网之鱼
