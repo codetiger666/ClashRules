@@ -127,7 +127,7 @@ dns:
 
   enhanced-mode: redir-host # DNS模式(redir-host/fake-ip)
   fake-ip-range: 198.18.0.1/16 # Fake-IP解析地址池
-  ＃ 是否使用系统hosts
+  # 是否使用系统hosts
   use-hosts: false
   nameserver:
     - 223.5.5.5
