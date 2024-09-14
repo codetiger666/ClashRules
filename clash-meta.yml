@@ -47,13 +47,15 @@ external-controller: 0.0.0.0:9090
 
 # http服务路径，可以放静态web网页，如yacd的控制面板
 #可通过`http://{{external-controller}}/ui`直接使用
-#external-ui: "/usr/share/openclash/dashboard"
-
+external-ui: "https://github.com/haishanh/yacd/archive/gh-pages.zip"
+# ui名称
+external-ui-name: ui
 # 控制器登录密码
-secret: ''
+secret: '6VA442ldeW!QdLDh'
 
 # 本地SOCKS5/HTTP(S)代理端口认证设置
 authentication:
+  - codetiger:cGooMAA64qxa7!S!
     
 # 出口网卡名称
 # interface-name: br-lan
@@ -131,6 +133,8 @@ dns:
   fake-ip-range: 198.18.0.1/16 # Fake-IP解析地址池
   # 是否使用系统hosts
   use-hosts: false
+  # dns查询走代理
+  respect-rules: true
   nameserver:
     - 223.5.5.5
     - 119.29.29.29
