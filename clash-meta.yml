@@ -47,7 +47,7 @@ external-controller: 0.0.0.0:9090
 
 # http服务路径，可以放静态web网页，如yacd的控制面板
 #可通过`http://{{external-controller}}/ui`直接使用
-external-ui-url: "https://proxy.111179.xyz/https://github.com/haishanh/yacd/archive/gh-pages.zip"
+external-ui-url: "https://proxy.111179.xyz/https://github.com/MetaCubeX/Yacd-meta/archive/refs/heads/gh-pages.zip"
 # 控制器登录密码
 secret: '6VA442ldeW!QdLDh'
 
