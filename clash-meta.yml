@@ -341,14 +341,6 @@ proxy-groups: # 此参数必须保留,不能删除
 
 # 分流规则组
 rule-providers:
-# https://github.com/Loyalsoldier/clash-rules 仓库规则
-  reject:
-    type: http
-    behavior: domain
-    url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
-    path: ./ruleset/reject.yaml
-    interval: 3600
-
   icloud:
     type: http
     behavior: domain
@@ -519,14 +511,13 @@ rule-providers:
 
 # 分流规则
 rules:
-  # - RULE-SET,applications,🟢全球直连
+  - GEOSITE,geosite:category-ads-all,⭕全球拦截
   - RULE-SET,codetiger-exchanges,💰交易所
   - RULE-SET,codetiger-direct,🟢全球直连
   - RULE-SET,codetiger-proxy,🗺自定义代理
   - RULE-SET,codetiger-dns,🔑dns
   - RULE-SET,wechat,🟢全球直连
   - RULE-SET,openai,🌐PROXY
-  - RULE-SET,reject,⭕全球拦截
   - RULE-SET,lancidr,🟢全球直连,no-resolve
   - RULE-SET,cncidr,🟢全球直连,no-resolve
   - RULE-SET,direct,🟢全球直连
