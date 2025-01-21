@@ -47,7 +47,7 @@ external-controller: 0.0.0.0:9090
 
 # http服务路径，可以放静态web网页，如yacd的控制面板
 #可通过`http://{{external-controller}}/ui`直接使用
-external-ui-url: "https://proxy.111179.xyz/https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
+external-ui-url: "https://proxy.111179.xyz/https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip"
 # 控制器登录密码
 secret: '6VA442ldeW!QdLDh'
 
