@@ -37,4 +37,4 @@ payload:
 
   # > cloudflare
   # > cloudflared
-  - DOMAIN-SUFFIX,v2.argotunnel.com
+  # - DOMAIN-SUFFIX,v2.argotunnel.com
