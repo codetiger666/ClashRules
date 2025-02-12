@@ -34,3 +34,7 @@ payload:
 
   # > 手机卡
   - DOMAIN-SUFFIX,giffgaff.com
+
+  # > cloudflare
+  # > cloudflared
+  - DOMAIN-SUFFIX,v2.argotunnel.com
