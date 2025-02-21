@@ -182,6 +182,7 @@ proxy-groups: # 此参数必须保留,不能删除
 - name: 🔰节点选择 # 手动选择
   type: select
   proxies:
+    - 🔁自动选择fallback
     - ♻️自动选择
     - 🟢全球直连
   
