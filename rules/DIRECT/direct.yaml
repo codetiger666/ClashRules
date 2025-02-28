@@ -1,0 +1,40 @@
+payload:
+  # > 获取ip相关
+  - DOMAIN-SUFFIX,ipv6-test.com
+  - DOMAIN-SUFFIX,api-ipv4.ip.sb
+  - DOMAIN-SUFFIX,ip-api.com
+
+  # > 自有域名服务
+  - DOMAIN-SUFFIX,yrjw.tk
+  - DOMAIN-SUFFIX,yzjx.tk
+  - DOMAIN-SUFFIX,lfyun.tk
+  - DOMAIN-SUFFIX,lfyun.cf
+  - DOMAIN-SUFFIX,codetiger.tk
+  - DOMAIN-SUFFIX,lfcloud.tk
+  - DOMAIN-SUFFIX,gybyt.eu.org
+  - DOMAIN-SUFFIX,codetiger.eu.org
+  - DOMAIN-SUFFIX,111179.xyz
+
+  # > 需要直连的服务
+  - DOMAIN-SUFFIX,uc.qbox.me
+  - DOMAIN-SUFFIX,apple-cloudkit.com
+  - DOMAIN-SUFFIX,icloud.com
+  - DOMAIN-SUFFIX,icloud.com.cn
+  - DOMAIN-SUFFIX,apple.com.cn
+  - DOMAIN-SUFFIX,apple.com
+  # > openai
+  - DOMAIN-SUFFIX,shared.oaifree.com
+
+  # > jsdelivr
+  - DOMAIN-SUFFIX,testingcf.jsdelivr.net
+
+  # > 甲骨文
+  - DOMAIN-SUFFIX,oracle.com
+  - DOMAIN-SUFFIX,oraclecloud.com
+
+  # > 甲骨文ip段
+  - IP-CIDR,151.145.0.0/16
+  - IP-CIDR,158.101.0.0/16
+
+  # > 手机卡
+  - DOMAIN-SUFFIX,giffgaff.com

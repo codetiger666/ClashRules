@@ -1,0 +1,47 @@
+payload:
+  # > Linux
+  # >> Ubuntu
+  - DOMAIN-SUFFIX,launchpad.net
+
+  # > git相关服务
+  - DOMAIN-SUFFIX,git.io
+  - DOMAIN-SUFFIX,github.io
+  - DOMAIN-SUFFIX,github.com
+  # > 编程服务相关
+  - DOMAIN-SUFFIX,golang.org
+  - DOMAIN-SUFFIX,visualstudio.com
+  - DOMAIN-SUFFIX,netgate.com
+  - DOMAIN-SUFFIX,docker.com
+  
+  # > Onedrive相关服务
+  - DOMAIN-SUFFIX,storage.live.com  
+  - DOMAIN-SUFFIX,pipe.aria.microsoft.com
+  - DOMAIN-SUFFIX,onedrive.com
+  - DOMAIN-SUFFIX,blob.core.windows.net
+  - DOMAIN-SUFFIX,officecdn.microsoft.com
+  - DOMAIN-SUFFIX,officecdn.microsoft.com.edgesuite.net
+  
+  # > chatgpt
+  - DOMAIN-SUFFIX,openai.com
+  - DOMAIN-SUFFIX,cocopilot.org
+  
+  # > 谷歌翻译
+  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN-SUFFIX,googleapis.cn
+
+  # > CDN 代理
+  - DOMAIN-SUFFIX,jsdelivr.net
+
+  # > 其他需代理
+  - DOMAIN-SUFFIX,kejilion.xyz
+  - DOMAIN-SUFFIX,woiden.id
+  - DOMAIN-SUFFIX,gstatic.com
+  - DOMAIN-SUFFIX,imnks.com
+  - IP-CIDR,192.227.178.63/32
+
+  # > bing
+  - DOMAIN-SUFFIX,th.bing.com
+
+  # > 论坛
+  - DOMAIN-SUFFIX,linux.do
+  

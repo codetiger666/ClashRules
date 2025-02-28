@@ -1,0 +1,31 @@
+payload:
+  # 交易所
+  #> bybit
+  - DOMAIN-SUFFIX,bybit.com
+  - DOMAIN-SUFFIX,bybit.org
+  - DOMAIN-SUFFIX,bybit.biz
+  - DOMAIN-SUFFIX,bybdc6.com
+  - DOMAIN-SUFFIX,byd3c3.com
+  - DOMAIN-SUFFIX,bitapi.vip
+  - DOMAIN-SUFFIX,bitkeep.top
+  - DOMAIN-SUFFIX,byabcde.com
+  - DOMAIN-SUFFIX,appsflyersdk.com
+  - DOMAIN-SUFFIX,bybitglobal.com
+  - DOMAIN-SUFFIX,bybit.cloud
+  - DOMAIN-SUFFIX,bitverse.zone
+  - DOMAIN-SUFFIX,gw.irs03.com
+  - DOMAIN-SUFFIX,byapps.net
+  #> bitget
+  - DOMAIN-KEYWORD,bitget
+  #> 币安
+  - DOMAIN-SUFFIX,binance.com
+  - DOMAIN-SUFFIX,binance.info
+  #> 海妖
+  - DOMAIN-SUFFIX,kraken.com
+  #> tg钱包
+  - DOMAIN-SUFFIX,ton.space
+  - DOMAIN-SUFFIX,walletbot.me
+  #> 欧易
+  - DOMAIN-SUFFIX,okx.com
+  
+  
