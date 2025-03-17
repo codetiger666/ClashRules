@@ -186,7 +186,7 @@ proxies: # 节点设置，此部分与PROXY-provider两者不能同时删除
 
 proxy-groups: # 此参数必须保留,不能删除
 
-- name: 🔰节点选择 # 手动选择
+- name: 🔰节点选择
   type: select
   proxies:
     - ♻️自动选择
@@ -211,7 +211,7 @@ proxy-groups: # 此参数必须保留,不能删除
   url: http://www.google.co.jp/generate_204
   interval: 150
 
-- name: 🪟微软服务 # 手动选择
+- name: 🪟微软服务
   type: select
   proxies:
     - 🔰节点选择
@@ -219,7 +219,7 @@ proxy-groups: # 此参数必须保留,不能删除
     - ♻️自动选择
     - 🟢全球直连
 
-- name: 📺NETFLIX # 手动选择
+- name: 📺NETFLIX
   type: select	
   proxies:
     - 🔰节点选择
@@ -228,7 +228,7 @@ proxy-groups: # 此参数必须保留,不能删除
     - 🟢全球直连
 
 
-- name: 🍎苹果服务 # 手动选择
+- name: 🍎苹果服务
   type: select
   proxies:
     - 🔰节点选择
@@ -237,7 +237,7 @@ proxy-groups: # 此参数必须保留,不能删除
     - 🟢全球直连
 
 
-- name: 🍏ICLOUD # 手动选择
+- name: 🍏ICLOUD
   type: select
   proxies:
     - 🔰节点选择
@@ -246,17 +246,17 @@ proxy-groups: # 此参数必须保留,不能删除
     - 🟢全球直连
 
 
-- name: 🟢全球直连 # 手动选择
+- name: 🟢全球直连
   type: select
   proxies:
     - DIRECT
 
-- name: ⭕全球拦截 # 手动选择
+- name: ⭕全球拦截
   type: select
   proxies:
     - REJECT
 
-- name: 🌏GOOGLE # 手动选择
+- name: 🌏GOOGLE
   type: select
   proxies:
     - 🔰节点选择
@@ -264,7 +264,7 @@ proxy-groups: # 此参数必须保留,不能删除
     - ♻️自动选择
     - 🟢全球直连
 
-- name: 🌐PROXY # 手动选择
+- name: 🌐PROXY
   type: select
   proxies:
     - 🔰节点选择
@@ -272,7 +272,7 @@ proxy-groups: # 此参数必须保留,不能删除
     - ♻️自动选择
     - 🟢全球直连
 
-- name: 🗺自定义代理 # 手动选择
+- name: 🗺自定义代理
   type: select
   proxies:
     - 🔰节点选择
@@ -280,7 +280,7 @@ proxy-groups: # 此参数必须保留,不能删除
     - ♻️自动选择
     - 🟢全球直连
     
-- name: 🔑dns # 手动选择
+- name: 🔑dns
   type: select
   proxies:
     - 🔰节点选择
@@ -296,15 +296,7 @@ proxy-groups: # 此参数必须保留,不能删除
     - ♻️自动选择
     - 🟢全球直连
 
-- name: 🏎️SPEEDTEST # 手动选择
-  type: select
-  proxies:
-    - 🔰节点选择
-    - 🔁自动选择fallback
-    - ♻️自动选择
-    - 🟢全球直连
-
-- name:  # 手🐟漏网之鱼动选择
+- name: 🏎️SPEEDTEST
   type: select
   proxies:
     - 🔰节点选择
