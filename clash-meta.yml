@@ -91,7 +91,7 @@ hosts:
 dns:
   enable: true # DNS开关(false/true)
   ipv6: true # IP6解析开关；如果为false，将返回ip6结果为空
-  listen: 0.0.0.0:7874 # DNS监听地址
+  listen: ::7874 # DNS监听地址
   prefer-h3: true
   # 遵循分流规则
   respect-rules: true
@@ -104,7 +104,7 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
   nameserver-policy: #指定域名使用自定义DNS解析
-    geosite:cn,private,apple:
+    geosite:cn,private,apple,netflix,onedrive,openai,apple,google:
       - 223.5.5.5
       - 119.29.29.29
       - "[2400:3200::1]:53"
@@ -113,7 +113,7 @@ dns:
       - tls://dns.alidns.com:853
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
-    rule-set:direct,chinadomain,codetiger-direct:
+    rule-set:direct,codetiger-direct:
       - 223.5.5.5
       - 119.29.29.29
       - "[2400:3200::1]:53"
@@ -122,8 +122,7 @@ dns:
       - tls://dns.alidns.com:853
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
-    geosite:category-ads-all: rcode://success
-    rule-set:icloud,apple,google,proxy,gfw,greatfire,tld-not-cn,netflix,onedrive,speedtest,openai:
+    rule-set:proxy,speedtest:
       - https://dns.google/dns-query
       - https://dns.cloudflare.com/dns-query
     rule-set:codetiger-exchanges,codetiger-proxy,codetiger-dns:
@@ -212,23 +211,7 @@ proxy-groups: # 此参数必须保留,不能删除
   url: http://www.google.co.jp/generate_204
   interval: 150
 
-- name: 📼国外媒体 # 手动选择
-  type: select
-  proxies:
-    - 🔰节点选择
-    - 🔁自动选择fallback
-    - ♻️自动选择
-    - 🟢全球直连
-
 - name: 🪟微软服务 # 手动选择
-  type: select
-  proxies:
-    - 🔰节点选择
-    - 🔁自动选择fallback
-    - ♻️自动选择
-    - 🟢全球直连
-
-- name: 📻YOUTUBE # 手动选择
   type: select
   proxies:
     - 🔰节点选择
@@ -313,16 +296,6 @@ proxy-groups: # 此参数必须保留,不能删除
     - ♻️自动选择
     - 🟢全球直连
 
-
-- name: 🗺️NOTCN # 手动选择
-  type: select
-  proxies:
-    - 🔰节点选择
-    - 🔁自动选择fallback
-    - ♻️自动选择
-    - 🟢全球直连
-
-
 - name: 🏎️SPEEDTEST # 手动选择
   type: select
   proxies:
@@ -331,7 +304,7 @@ proxy-groups: # 此参数必须保留,不能删除
     - ♻️自动选择
     - 🟢全球直连
 
-- name: 🐟漏网之鱼 # 手动选择
+- name:  # 手🐟漏网之鱼动选择
   type: select
   proxies:
     - 🔰节点选择
@@ -349,27 +322,6 @@ rule-providers:
     path: ./ruleset/reject.yaml
     interval: 3600
 
-  icloud:
-    type: http
-    behavior: domain
-    url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt"
-    path: ./ruleset/icloud.yaml
-    interval: 3600
-
-  apple:
-    type: http
-    behavior: domain
-    url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt"
-    path: ./ruleset/apple.yaml
-    interval: 3600
-
-  google:
-    type: http
-    behavior: domain
-    url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt"
-    path: ./ruleset/google.yaml
-    interval: 3600
-
   proxy:
     type: http
     behavior: domain
@@ -384,53 +336,11 @@ rule-providers:
     path: ./ruleset/direct.yaml
     interval: 3600
 
-  chinadomain:
-    type: http
-    behavior: classical
-    url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/RealSeek/Clash_Rule_DIY/master/DIRECT/ChinaDomain.yaml"
-    path: ./ruleset/chinaDomain.yaml
-    interval: 3600
-
   private:
     type: http
     behavior: domain
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt"
     path: ./ruleset/private.yaml
-    interval: 3600
-
-  gfw:
-    type: http
-    behavior: domain
-    url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt"
-    path: ./ruleset/gfw.yaml
-    interval: 3600
-
-  greatfire:
-    type: http
-    behavior: domain
-    url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/greatfire.txt"
-    path: ./ruleset/greatfire.yaml
-    interval: 3600
-
-  tld-not-cn:
-    type: http
-    behavior: domain
-    url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt"
-    path: ./ruleset/tld-not-cn.yaml
-    interval: 3600
-
-  telegramcidr:
-    type: http
-    behavior: ipcidr
-    url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
-    path: ./ruleset/telegramcidr.yaml
-    interval: 3600
-
-  cncidr:
-    type: http
-    behavior: ipcidr
-    url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt"
-    path: ./ruleset/cncidr.yaml
     interval: 3600
 
   lancidr:
@@ -440,45 +350,11 @@ rule-providers:
     path: ./ruleset/lancidr.yaml
     interval: 3600
 
-  applications:
-    type: http
-    behavior: classical
-    url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
-    path: ./ruleset/applications.yaml
-    interval: 3600
-
-  netflixcidr:
-    type: http
-    behavior: ipcidr
-    url: https://proxy.111179.xyz/https://raw.githubusercontent.com/codetiger666/clash-pro-rules/release/netflixcidr.txt
-    path: "./ruleset/netflixcidr.yaml"
-    interval: 3600
-
-  netflix:
-    type: http
-    behavior: domain
-    url: https://proxy.111179.xyz/https://raw.githubusercontent.com/codetiger666/clash-pro-rules/release/netflix.txt
-    path: "./ruleset/netflix.yaml"
-    interval: 3600
-
-# https://github.com/Semporia/ClashX-Pro/ 仓库规则
-  onedrive:
-    type: http
-    behavior: classical
-    url: https://proxy.111179.xyz/https://raw.githubusercontent.com/RealSeek/Clash_Rule_DIY/master/PROXY/OneDrive.yaml
-    path: "./ruleset/micrsoft.yaml"
-    interval: 3600
   speedtest:
     type: http
     behavior: classical
     url: https://proxy.111179.xyz/https://raw.githubusercontent.com/Semporia/Clash/master/Rule/Speedtest.yaml
     path: "./ruleset/speedtest.yaml"
-    interval: 3600
-  openai:
-    type: http
-    behavior: classical
-    url: https://proxy.111179.xyz/https://raw.githubusercontent.com/zzcabc/Rules/master/Rules_Provider/Complete/Other/OpenAI.yaml
-    path: "./ruleset/openai.yaml"
     interval: 3600
   wechat:
     type: http
@@ -519,7 +395,6 @@ rule-providers:
 
 # 分流规则
 rules:
-  # - RULE-SET,applications,🟢全球直连
   - RULE-SET,codetiger-exchanges,💰交易所
   - RULE-SET,codetiger-direct,🟢全球直连
   - RULE-SET,codetiger-proxy,🗺自定义代理
@@ -528,25 +403,15 @@ rules:
   - RULE-SET,openai,🌐PROXY
   - RULE-SET,reject,⭕全球拦截
   - RULE-SET,lancidr,🟢全球直连,no-resolve
-  - RULE-SET,cncidr,🟢全球直连,no-resolve
   - RULE-SET,direct,🟢全球直连
-  - RULE-SET,chinadomain,🟢全球直连
   - GEOSITE,cn,🟢全球直连
-  - GEOSITE,tld-cn,🟢全球直连
-  - GEOSITE,category-games@cn,🟢全球直连
-  - GEOIP,CN,🟢全球直连,no-resolve
-  - RULE-SET,icloud,🍏ICLOUD
-  - RULE-SET,apple,🍎苹果服务
-  # - RULE-SET,fcm,🟢全球直连
-  - RULE-SET,onedrive,🪟微软服务
-  - RULE-SET,google,🌏GOOGLE
-  # - RULE-SET,youtube,📻YOUTUBE
-  - RULE-SET,netflix,📺NETFLIX
-  - RULE-SET,netflixcidr,📺NETFLIX
-  - RULE-SET,gfw,🌐PROXY
+  - GEOIP,cn,🟢全球直连,no-resolve
+  - GEOSITE,apple,🍎苹果服务
+  - GEOSITE,onedrive,🪟微软服务
+  - GEOSITE,google,🌏GOOGLE
+  - GEOSITE,netflix,📺NETFLIX
+  - GEOIP,netflix,📺NETFLIX
   - RULE-SET,speedtest,🏎️SPEEDTEST
-  - RULE-SET,greatfire,🌐PROXY
-  # - RULE-SET,tld-not-cn,🗺️NOTCN
-  - RULE-SET,telegramcidr,🌐PROXY,no-resolve
+  - GEOIP,telegram,🌐PROXY,no-resolve
   - RULE-SET,proxy,🌐PROXY
   - MATCH,🐟漏网之鱼
