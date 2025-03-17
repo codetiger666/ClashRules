@@ -19,10 +19,10 @@ tcp-concurrent: true         #【Meta专属】TCP连接并发，如果域名解�
 
 #自定义 geodata url
 geox-url:
-  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
-  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb"
-  asn: "https://testingcf.jsdelivr.net/gh/xishang0128/geoip@release/GeoLite2-ASN.mmdb"
+  geoip: "https://proxy.111179.xyz/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
+  geosite: "https://proxy.111179.xyz/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite-lite.dat"
+  mmdb: "https://proxy.111179.xyz/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb"
+  asn: "https://proxy.111179.xyz/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
 
 geo-auto-update: true # 是否自动更新 geodata
 geo-update-interval: 720 # 更新间隔，单位：小时
@@ -47,7 +47,7 @@ external-controller: 0.0.0.0:9090
 
 # http服务路径，可以放静态web网页，如yacd的控制面板
 #可通过`http://{{external-controller}}/ui`直接使用
-external-ui-url: "https://proxy.111179.xyz/https://github.com/MetaCubeX/Yacd-meta/archive/refs/heads/gh-pages.zip"
+external-ui-url: "https://proxy.111179.xyz/https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip"
 # 控制器登录密码
 secret: '6VA442ldeW!QdLDh'
 
@@ -80,7 +80,7 @@ tun:
 # P.S. +.foo.com equals to .foo.com and foo.com
 hosts:
   # cname域名映射
-  shared.oaifree.com: edge.codetiger.eu.org
+  #shared.oaifree.com: edge.codetiger.eu.org
   #linux.do: edge.codetiger.eu.org
   # '*.clash.dev': 127.0.0.1
   # '.dev': 127.0.0.1
