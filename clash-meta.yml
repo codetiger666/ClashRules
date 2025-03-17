@@ -192,7 +192,6 @@ proxy-groups: # 此参数必须保留,不能删除
     - ♻️自动选择
     - 🟢全球直连
   
-
 - name: ♻️自动选择 # URL测试(根据延迟)
   type: url-test
   url: http://www.google.co.jp/generate_204
@@ -227,7 +226,6 @@ proxy-groups: # 此参数必须保留,不能删除
     - ♻️自动选择
     - 🟢全球直连
 
-
 - name: 🍎苹果服务
   type: select
   proxies:
@@ -235,16 +233,6 @@ proxy-groups: # 此参数必须保留,不能删除
     - 🔁自动选择fallback
     - ♻️自动选择
     - 🟢全球直连
-
-
-- name: 🍏ICLOUD
-  type: select
-  proxies:
-    - 🔰节点选择
-    - 🔁自动选择fallback
-    - ♻️自动选择
-    - 🟢全球直连
-
 
 - name: 🟢全球直连
   type: select
