@@ -304,6 +304,14 @@ proxy-groups: # 此参数必须保留,不能删除
     - ♻️自动选择
     - 🟢全球直连
 
+- name: 🐟漏网之鱼
+  type: select
+  proxies:
+    - 🔰节点选择
+    - 🔁自动选择fallback
+    - ♻️自动选择
+    - 🟢全球直连
+
 # 分流规则组
 rule-providers:
 # https://github.com/Loyalsoldier/clash-rules 仓库规则
