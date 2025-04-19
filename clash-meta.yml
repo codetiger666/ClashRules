@@ -109,8 +109,6 @@ dns:
       - 119.29.29.29
       - "[2400:3200::1]:53"
       - "[2402:4e00::]:53"
-      - tls://dot.pub:853
-      - tls://dns.alidns.com:853
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
     rule-set:direct,codetiger-direct:
@@ -118,8 +116,6 @@ dns:
       - 119.29.29.29
       - "[2400:3200::1]:53"
       - "[2402:4e00::]:53"
-      - tls://dot.pub:853
-      - tls://dns.alidns.com:853
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
     rule-set:proxy,speedtest:
@@ -139,8 +135,6 @@ dns:
     - 119.29.29.29
     - "[2400:3200::1]:53"
     - "[2402:4e00::]:53"
-    - tls://dot.pub:853
-    - tls://dns.alidns.com:853
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
   nameserver:
@@ -148,8 +142,6 @@ dns:
     - 119.29.29.29
     - "[2400:3200::1]:53"
     - "[2402:4e00::]:53"
-    - tls://dot.pub:853
-    - tls://dns.alidns.com:853
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
   fallback: # 回落DNS服务器，支持udp/tcp/dot/doh/doq
