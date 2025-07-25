@@ -38,3 +38,10 @@ payload:
 
   # > 手机卡
   - DOMAIN-SUFFIX,giffgaff.com
+  
+  # > visa相关
+  - DOMAIN-SUFFIX,visa.com
+  - DOMAIN-SUFFIX,visa.com.sg
+  - DOMAIN-SUFFIX,visa.com.hk
+  - DOMAIN-SUFFIX,visa.com.tw
+
