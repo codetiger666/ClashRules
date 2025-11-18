@@ -93,4 +93,7 @@ payload:
 
   # > 论坛
   - DOMAIN-SUFFIX,linux.do
+
+  # > copilot自定义
+  - DOMAIN-SUFFIX,mycopilot.noteo.cn
   
