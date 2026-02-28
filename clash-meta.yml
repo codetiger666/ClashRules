@@ -38,7 +38,7 @@ geox-url:
   mmdb: "https://proxy.111179.xyz/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb"
   asn: "https://proxy.111179.xyz/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
 
-geo-auto-update: true # 是否自动更新 geodata
+geo-auto-update: false # 是否自动更新 geodata
 geo-update-interval: 720 # 更新间隔，单位：小时
 
 # 监听IP白名单（当allow-lan：true），只允许列表设备
@@ -174,14 +174,14 @@ sniffer:
   # 全局配置，优先级低于 sniffer.sniff 实际配置
   override-destination: true
   # 嗅探配置
-  sniff:
-    HTTP:
-      ports: [80, 8080-8880]
-      override-destination: true
-    TLS:
-      ports: [443, 8443]
-    QUIC:
-      ports: [443, 8443]
+  #sniff:
+  #  HTTP:
+  #    ports: [80, 8080-8880]
+  #    override-destination: true
+  #  TLS:
+  #    ports: [443, 8443]
+  #  QUIC:
+  #    ports: [443, 8443]
   # 不需要嗅探的域名
   skip-domain:
     - Mijia Cloud
@@ -314,48 +314,48 @@ rule-providers:
     behavior: domain
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
     path: ./ruleset/reject.yaml
-    interval: 3600
+    interval: 86400
 
   proxy:
     type: http
     behavior: domain
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
     path: ./ruleset/proxy.yaml
-    interval: 3600
+    interval: 86400
 
   direct:
     type: http
     behavior: domain
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
     path: ./ruleset/direct.yaml
-    interval: 3600
+    interval: 86400
 
   private:
     type: http
     behavior: domain
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt"
     path: ./ruleset/private.yaml
-    interval: 3600
+    interval: 86400
 
   lancidr:
     type: http
     behavior: ipcidr
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
     path: ./ruleset/lancidr.yaml
-    interval: 3600
+    interval: 86400
 
   speedtest:
     type: http
     behavior: classical
     url: https://proxy.111179.xyz/https://raw.githubusercontent.com/Semporia/Clash/master/Rule/Speedtest.yaml
     path: "./ruleset/speedtest.yaml"
-    interval: 3600
+    interval: 86400
   wechat:
     type: http
     behavior: classical
     url: https://proxy.111179.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat_No_Resolve.yaml
     path: "./ruleset/wechat.yaml"
-    interval: 3600
+    interval: 86400
 
 # 私人仓库规则
 
@@ -364,28 +364,28 @@ rule-providers:
     behavior: classical
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/DIRECT/direct.yaml"
     path: ./ruleset/codetiger-direct.yaml
-    interval: 3600
+    interval: 86400
     
   codetiger-proxy:
     type: http
     behavior: classical
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/proxy.yaml"
     path: ./ruleset/codetiger-proxy.yaml
-    interval: 3600
+    interval: 86400
 
   codetiger-exchanges:
     type: http
     behavior: classical
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/exchanges.yaml"
     path: ./ruleset/codetiger-exchanges.yaml
-    interval: 3600
+    interval: 86400
 
   codetiger-dns:
     type: http
     behavior: classical
     url: "https://proxy.111179.xyz/https://raw.githubusercontent.com/codetiger666/ClashRules/main/rules/PROXY/dns.yaml"
     path: ./ruleset/codetiger-dns.yaml
-    interval: 3600
+    interval: 86400
 
 # 分流规则
 rules:
