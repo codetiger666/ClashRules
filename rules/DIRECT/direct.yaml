@@ -47,3 +47,6 @@ payload:
 
   # > 机场
   - DOMAIN-SUFFIX,pigfarmcloud.com
+
+  # > ai 中转
+  - DOMAIN-SUFFIX,muyuan.do
