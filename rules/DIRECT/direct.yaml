@@ -5,9 +5,17 @@ payload:
   - DOMAIN-SUFFIX,ip-api.com
 
   # > 自有域名服 
-  - DOMAIN-SUFFIX,proxy.111179.xyz
-  - DOMAIN-SUFFIX,api.111179.xyz
-
+  # > 自有域名服务
+  - DOMAIN-SUFFIX,yrjw.tk
+  - DOMAIN-SUFFIX,yzjx.tk
+  - DOMAIN-SUFFIX,lfyun.tk
+  - DOMAIN-SUFFIX,lfyun.cf
+  - DOMAIN-SUFFIX,codetiger.tk
+  - DOMAIN-SUFFIX,lfcloud.tk
+  - DOMAIN-SUFFIX,gybyt.eu.org
+  - DOMAIN-SUFFIX,codetiger.eu.org
+  - DOMAIN-SUFFIX,111179.xyz
+  
   # > 需要直连的服务
   - DOMAIN-SUFFIX,uc.qbox.me
   - DOMAIN-SUFFIX,apple-cloudkit.com
