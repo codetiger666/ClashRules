@@ -51,3 +51,4 @@ payload:
 
   # > ai 中转
   - DOMAIN-SUFFIX,muyuan.do
+  - DOMAIN-SUFFIX,sharedchat.cc
