@@ -12,15 +12,17 @@ mixed-port: 20000
 
 # 添加入站
 listeners:
-  - name:  vmess-in-1
-    type:  vmess
+  - name: vless-in-1
+    type: vless
     port: 20502
     listen: 0.0.0.0
     users:
-     - username: 1
-       uuid: fc36adc0-696f-4526-9c5f-dcac2fc1319d
-       alterId: 1
-    ws-path: "/"
+      - username: 1
+        uuid: fc36adc0-696f-4526-9c5f-dcac2fc1319d
+        alterId: 1
+    xhttp-config:
+      path: "/"
+      mode: auto
     certificate: /etc/nikki/run/ssl/server.crt
     private-key: /etc/nikki/run/ssl/server.key
 
