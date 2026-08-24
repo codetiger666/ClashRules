@@ -1,0 +1,70 @@
+name: Gen MRS Rule
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  gen-mrs:
+    name: Gen MRS Rule
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        name: Checkout
+        uses: actions/checkout@main
+        
+      - name: download rule file
+        run: |
+          mkdir raw-rule
+          wget https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt -O raw-rule/reject.yaml
+          wget https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt -O raw-rule/proxy.yaml
+          wget https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt -O raw-rule/direct.yaml
+          wget https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt -O raw-rule/private.yaml
+          wget https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt -O raw-rule/lancidr.yaml
+          wget https://raw.githubusercontent.com/Semporia/Clash/master/Rule/Speedtest.yaml -O raw-rule/speedtest.yaml
+          wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat_No_Resolve.yaml -O raw-rule/wechat.yaml
+        
+      - name: download mihomo
+        run: |
+          wget https://github.com/MetaCubeX/mihomo/releases/download/v1.19.30/mihomo-linux-amd64-v2-v1.19.30.gz -O mihomo.gz
+          gzip -d mihomo.gz
+          chmod +x mihomo
+
+      - name: gen mrs rule
+        run: |
+          mkdir rules/mrs -p || true
+          find ./raw-rule/ -type f -name "*.yaml" -print0 |
+          while IFS= read -r -d '' file; do
+              ./mihomo convert-ruleset domain yaml "$file" "rules/mrs/other-$(basename "${file%.yaml}")-domain.mrs" || true
+          done
+          find ./raw-rule/ -type f -name "*.yaml" -print0 |
+          while IFS= read -r -d '' file; do
+              ./mihomo convert-ruleset ipcidr yaml "$file" "rules/mrs/other-$(basename "${file%.yaml}")-ip.mrs"  || true
+          done
+          find ./rules/ -type f -name "*.yaml" -print0 |
+          while IFS= read -r -d '' file; do
+              ./mihomo convert-ruleset domain yaml "$file" "rules/mrs/codetiger-$(basename "${file%.yaml}")-domain.mrs" || true
+          done
+          find ./rules/ -type f -name "*.yaml" -print0 |
+          while IFS= read -r -d '' file; do
+              ./mihomo convert-ruleset ipcidr yaml "$file" "rules/mrs/codetiger-$(basename "${file%.yaml}")-ip.mrs"  || true
+          done
+
+      - name: git init
+        run: |
+          git config --global user.email ${{ secrets.email }}
+          git config --global user.name "codetiger666"
+          git config pull.rebase true
+          
+      - name: git push
+        run: |
+          rm -rf raw-rule
+          rm -rf mihomo
+          git add .
+          git commit -m "chore: gen mrs file"
+          git pull && git push
+          
